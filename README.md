@@ -1,3 +1,3 @@
-# LookKit_Package
+# LookKit SDK
 
 A description of this package.
