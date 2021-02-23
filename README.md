@@ -18,7 +18,7 @@ FaceAI use 2 main features.
 ```
 dependencies: [
   .package(
-      url:  "https://github.com/LA-Labs/FaceAI.git",
+      url:  "https://github.com/LA-Labs/LookKit_Package.git",
       .branch("master")
   )
 ]
