@@ -31,7 +31,7 @@ import LookKit
 
 ## Basic Usage
 ### Fetch options
-Firstly, FaceAI provides useful initializers to create asset fetching options using ```AssetFetchingOptions```
+Firstly, LookKit provides useful initializers to create asset fetching options using ```AssetFetchingOptions```
 ```swift 
 // Create default fetch options
 let options = AssetFetchingOptions()
@@ -66,9 +66,9 @@ let faceRectangle = VFilter.faceRectangle()
 
 
 ### Face detection 
-Call FaceAI detecotor with the filter request and fetch options.
+Call Vision detecotor with the filter request and fetch options.
 ```swift 
-FaceAI.detect(faceRectangle, with: options) { (result) in
+Vision.detect(faceRectangle, with: options) { (result) in
    switch result {
    // The result type is ProcessedAsset
    // Containt all photos with face recatangle detection
