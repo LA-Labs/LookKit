@@ -120,12 +120,12 @@ let options = AssetFetchingOptions()
         
 // Create cluster options
 let clusterOptions = ClusterOptions()
+
+// Start clustering
 Vision.cluster(fetchOptions: options,
                culsterOptions: clusterOptions) { (result) in
-     // Result contian group faces
-     // [Int: [Face]]
-     // Key = group id
-     // Value = Same people faces
+     // Result contian groups of faces
+     // [[Face]]
      switch result {
         case .success(let faces):
            print(faces)
