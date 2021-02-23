@@ -10,7 +10,7 @@ LookKit use 2 main features.
 
 # Requirement
 - iOS 13.0+
-- Swift 5.1+
+- Swift 5.3+
 - Xcode 12.0+
 
 # Install
