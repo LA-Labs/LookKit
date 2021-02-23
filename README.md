@@ -25,7 +25,7 @@ dependencies: [
 ```
 ## Import
 ```swift 
-import FaceAI
+import LookKit
 ```
 # Usage
 
@@ -95,7 +95,7 @@ let objectDetecting = VFilter.objectDetecting()
 // Combine to pipe processing
 // Every image will go through the pipe.
 let pipeProcessing = faceRectangle |>> objectDetecting
-FaceAI.detect(pipeProcessing, with: options) { (result) in
+Vision.detect(pipeProcessing, with: options) { (result) in
 switch result {
    // The result type is ProcessedAsset
    // Containt all photos with face recatangle detection
@@ -120,7 +120,7 @@ let options = AssetFetchingOptions()
         
 // Create cluster options
 let clusterOptions = ClusterOptions()
-FaceAI.cluster(fetchOptions: options,
+Vision.cluster(fetchOptions: options,
                culsterOptions: clusterOptions) { (result) in
      // Result contian group faces
      // [Int: [Face]]
