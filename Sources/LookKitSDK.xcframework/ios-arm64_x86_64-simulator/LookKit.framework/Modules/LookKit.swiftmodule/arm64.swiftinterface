@@ -1,0 +1,132 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LookKit
+import Accelerate
+import CoreML
+import Foundation
+@_exported import LookKit
+import Photos
+import Swift
+import UIKit
+import Vision
+import simd
+public struct ClusterOptions {
+  public init(minimumClusterSize: Swift.Int = 1, numberIterations: Swift.Int = 100, faceSimilarityThreshold: Swift.Double = 0.7)
+}
+public enum VisionProcessError : Swift.Error {
+  case unknown
+  case fetchImages
+  case facesDetcting
+  case cgImageNotFound
+  case emptyObservation
+  case error(Swift.Error)
+}
+public class AssetFetchingOptions {
+  public init(sortDescriptors: [Foundation.NSSortDescriptor]? = nil, assetCollection: LookKit.AssetCollection = .allAssets, fetchLimit: Swift.Int = Int.max)
+  @objc deinit
+}
+public struct ProcessedAsset : Swift.Hashable {
+  public let localIdentifier: Swift.String
+  public let categories: [Swift.String]
+  public let boundingBoxes: [CoreGraphics.CGRect]
+  public let faces: [LookKit.Face]
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public static func == (a: LookKit.ProcessedAsset, b: LookKit.ProcessedAsset) -> Swift.Bool
+}
+public enum PhotosAuthorizationError : Swift.Error {
+  case denied
+  case notDetermined
+  public static func == (a: LookKit.PhotosAuthorizationError, b: LookKit.PhotosAuthorizationError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.ProcessAsset
+@_hasMissingDesignatedInitializers public class VFilter {
+  public static func faceRectangle() -> LookKit.VisionFilter
+  public static func objectDetecting() -> LookKit.VisionFilter
+  public static func imageQuality() -> LookKit.VisionFilter
+  @objc deinit
+}
+public struct ProcessAsset {
+}
+public struct FaceClusters {
+  public let faceID: Swift.Int
+  public let faces: [LookKit.Face]
+}
+public enum VisionProcessType {
+  case imageFatching
+  case faceDetection
+  case objectDetection
+  case imageQuality
+  public static func == (a: LookKit.VisionProcessType, b: LookKit.VisionProcessType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@_hasMissingDesignatedInitializers public class PhotosAuthorizationService {
+  public static func checkPhotoLibraryPermission(completion: @escaping (Swift.Result<Swift.Void, LookKit.PhotosAuthorizationError>) -> Swift.Void)
+  @objc deinit
+}
+precedencegroup ComparisonPrecedence {
+  associativity: left
+}
+infix operator |> : ComparisonPrecedence
+infix operator >> : ComparisonPrecedence
+infix operator |>> : ComparisonPrecedence
+public func |>> <U, T, Z>(f: @escaping (U) throws -> T, g: @escaping (T) throws -> Z) -> (U) throws -> Z
+infix operator >>> : ComparisonPrecedence
+@_hasMissingDesignatedInitializers public class Vision {
+  public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
+  @objc deinit
+}
+public struct Face : Swift.Hashable, Swift.Identifiable {
+  public var id: Swift.String {
+    get
+  }
+  public let localIdnetifier: Swift.String
+  public let faceCroppedImage: UIKit.UIImage
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public typealias ID = Swift.String
+  public static func == (a: LookKit.Face, b: LookKit.Face) -> Swift.Bool
+}
+public struct Stack<Element> {
+  public init()
+  public mutating func push(_ element: Element)
+  public mutating func pop() -> Element?
+  public func peek() -> Element?
+  public func isEmpty() -> Swift.Bool
+}
+public struct SamplePair {
+}
+public struct OrderedSamplePair {
+}
+public struct Pair {
+}
+public class ChineseWhispers {
+  public init()
+  public func chinese_whispers<T>(objects: [T], distanceFunction: (T, T) -> Swift.Double, eps: Swift.Double, numIterations: Swift.Int) -> [Swift.Int]
+  public func chinese_whispers(edges: [LookKit.SamplePair], numIterations: Swift.Int) -> [Swift.Int]
+  public func chinese_whispers(edges: [LookKit.OrderedSamplePair], numIterations: Swift.Int) -> [Swift.Int]
+  public func group<T>(objects: [T], labels: [Swift.Int]) -> [[T]]
+  @objc deinit
+}
+public enum AssetCollection {
+  case allAssets
+  case albumName(_: Swift.String)
+  case assetCollection(_: Photos.PHAssetCollection)
+  case identifiers(_: [Swift.String])
+}
+extension LookKit.PhotosAuthorizationError : Swift.Equatable {}
+extension LookKit.PhotosAuthorizationError : Swift.Hashable {}
+extension LookKit.VisionProcessType : Swift.Equatable {}
+extension LookKit.VisionProcessType : Swift.Hashable {}
