@@ -50,6 +50,7 @@ public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.Process
   public static func faceRectangle() -> LookKit.VisionFilter
   public static func objectDetecting() -> LookKit.VisionFilter
   public static func imageQuality() -> LookKit.VisionFilter
+  public static func faceEmbedding() -> LookKit.VisionFilter
   @objc deinit
 }
 public struct ProcessAsset {
@@ -83,8 +84,20 @@ public func |>> <U, T, Z>(f: @escaping (U) throws -> T, g: @escaping (T) throws 
 infix operator >>> : ComparisonPrecedence
 @_hasMissingDesignatedInitializers public class Vision {
   public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, qualityFilter: LookKit.QualityFilter = .none, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, qualityFilter: LookKit.QualityFilter, completion: @escaping (Swift.Result<(result: Swift.Bool, eps: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
   @objc deinit
+}
+public enum QualityFilter {
+  case none
+  case low
+  case medium
+  case high
+  public static func == (a: LookKit.QualityFilter, b: LookKit.QualityFilter) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct Face : Swift.Hashable, Swift.Identifiable {
   public var id: Swift.String {
@@ -105,6 +118,11 @@ public struct Stack<Element> {
   public mutating func pop() -> Element?
   public func peek() -> Element?
   public func isEmpty() -> Swift.Bool
+}
+public enum FaceComparisonError : Swift.Error {
+  case tooManyFaces(Swift.Int)
+  case cantFindFaces
+  case error(Swift.Error)
 }
 public struct SamplePair {
 }
@@ -130,3 +148,5 @@ extension LookKit.PhotosAuthorizationError : Swift.Equatable {}
 extension LookKit.PhotosAuthorizationError : Swift.Hashable {}
 extension LookKit.VisionProcessType : Swift.Equatable {}
 extension LookKit.VisionProcessType : Swift.Hashable {}
+extension LookKit.QualityFilter : Swift.Equatable {}
+extension LookKit.QualityFilter : Swift.Hashable {}
