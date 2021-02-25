@@ -27,7 +27,7 @@ public class AssetFetchingOptions {
 }
 public struct ProcessedAsset : Swift.Hashable {
   public let localIdentifier: Swift.String
-  public let categories: [Swift.String]
+  public let tags: [LookKit.DetectedObject]
   public let boundingBoxes: [CoreGraphics.CGRect]
   public let faces: [LookKit.Face]
   public func hash(into hasher: inout Swift.Hasher)
@@ -83,9 +83,21 @@ infix operator |>> : ComparisonPrecedence
 public func |>> <U, T, Z>(f: @escaping (U) throws -> T, g: @escaping (T) throws -> Z) -> (U) throws -> Z
 infix operator >>> : ComparisonPrecedence
 @_hasMissingDesignatedInitializers public class Vision {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Detector : LookKit.Vision {
   public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ImageProcessor : LookKit.Detector {
+  public static func alignFaces(from sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func alignFaces(fetchOptions: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Recognition : LookKit.Detector {
   public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, qualityFilter: LookKit.QualityFilter = .none, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, qualityFilter: LookKit.QualityFilter, completion: @escaping (Swift.Result<(result: Swift.Bool, eps: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, qualityFilter: LookKit.QualityFilter, completion: @escaping (Swift.Result<(result: Swift.Bool, distance: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
   @objc deinit
 }
 public enum QualityFilter {
@@ -105,12 +117,18 @@ public struct Face : Swift.Hashable, Swift.Identifiable {
   }
   public let localIdnetifier: Swift.String
   public let faceCroppedImage: UIKit.UIImage
+  public let faceObservation: Vision.VNFaceObservation
+  public let quality: Swift.Float
+  public let faceAngle: Swift.Double
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
   public typealias ID = Swift.String
   public static func == (a: LookKit.Face, b: LookKit.Face) -> Swift.Bool
+}
+public struct DetectedObject : Swift.Equatable {
+  public static func == (a: LookKit.DetectedObject, b: LookKit.DetectedObject) -> Swift.Bool
 }
 public struct Stack<Element> {
   public init()

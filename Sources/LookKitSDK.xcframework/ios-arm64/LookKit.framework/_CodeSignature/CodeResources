@@ -16,17 +16,89 @@
 		<data>
 		Y9uz0v35Wj1gQPHYW1afBckyRkk=
 		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/analytics/coremldata.bin</key>
+		<data>
+		XHaRHDls4/S4FIvlR2Cvn3uHBm0=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
+		<data>
+		VTKVjt9lrUPsKOE3FqSUcEq5gMw=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
+		<data>
+		93WXnrlFnm5PSsuZgOvq7Qj1Kbs=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
+		<data>
+		U6sFqbcOyo7P4KTbnpJ3xfxx+1M=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/coremldata.bin</key>
+		<data>
+		9cBeldGdqRMt98gkmvMHlt6LNOA=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model.espresso.net</key>
+		<data>
+		Ia8mkn/o9sUCLwR2lVxKV+R1Gts=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model.espresso.shape</key>
+		<data>
+		pGIykBtvmrKc2bzLjzKOVFiEpsw=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model.espresso.weights</key>
+		<data>
+		ukaVRazSky6Y0ZeuPVWzuqYzepQ=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model/coremldata.bin</key>
+		<data>
+		AyvVi5cUgezTYZFS+H0JNPDYKgA=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/neural_network_optionals/coremldata.bin</key>
+		<data>
+		uA3l0Th1hUHF8FJlrRRKufqG0ds=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/analytics/coremldata.bin</key>
+		<data>
+		gG00dOLWMlX5fQ7aE60Z8MwDxM4=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/coremldata.bin</key>
+		<data>
+		RAaK1S9ln6zTBCtQArBIgdnSrUo=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model.espresso.net</key>
+		<data>
+		foCLQswYAk0IivkF5Hnt/SE33hI=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model.espresso.shape</key>
+		<data>
+		zhT4XTUbzKK0FDe9rI8zPp94V1I=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model.espresso.weights</key>
+		<data>
+		4OP3u8MT+KbnFqzn8uxrywhV26w=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model/coremldata.bin</key>
+		<data>
+		yNfQ7w7t+oLS6hqlkoRbmm1LArc=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/neural_network_optionals/coremldata.bin</key>
+		<data>
+		uA3l0Th1hUHF8FJlrRRKufqG0ds=
+		</data>
+		<key>MobileNetV2_SSDLite.mlmodelc/model2/coremldata.bin</key>
+		<data>
+		xf6IP9CBrpe6d32aCO+yo7ntv9o=
+		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
 		6hLAHUSyECkIcV0d/NcUXGgqUTw=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		BWyYzmRBP7S5X4M9adeFauEgDX0=
+		phX9Rfe/B3QLEmt1O58dtvN24rc=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		K/fc4ZHJtXYBV6HMWGXEbjFO1/A=
+		BM36yxtKGar23EnjOP73JK8moWc=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,11 +106,11 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		BWyYzmRBP7S5X4M9adeFauEgDX0=
+		phX9Rfe/B3QLEmt1O58dtvN24rc=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		K/fc4ZHJtXYBV6HMWGXEbjFO1/A=
+		BM36yxtKGar23EnjOP73JK8moWc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -93,6 +165,132 @@
 			AkEFPREUvgY/vyclOYgt9uU5316/P2yY80hUnEGXABw=
 			</data>
 		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/analytics/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6BqIkmc5o5CaQOH+KeJSDpNTDOP8+3w5IAiVhUbHrr8=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			P1C5ck/PVUAh2RszDxtPNK33rXO/Yx3v825oaz/LeMI=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Dx3qELGh6tcbqC7ZqaoaN0OiyT11pDpGkL4KZV3ugvo=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qHmzcuM7myQx/XZ1SMWqPp7mZDle16+3zNUxZ2BA4K0=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			s9gyAC1/Y3U9otwXWxxdVO3sZF3EZLYbBH+iprtDBgE=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model.espresso.net</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ainBaakj/vSvYtp1HlLjk/KmPgRi4V19lPih6Zj8U8Y=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model.espresso.shape</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uZBwzySOTzaIuMmqsqnjLEkE58L1zfkez83dICpGt8M=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model.espresso.weights</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UD1lBdwacPCVkM7Wws4WbQiu02gl7av2cW/pVY5mfM4=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/model/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CJPCiEp21Qvpv+Xxrb6up2khi9N7a6oBM7aTqzbcKdg=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model0/neural_network_optionals/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LDTOHfI7g4xavyp/ZDfMo9MGftUJ/yXxHfaxG1grUes=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/analytics/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wgp9m8U/wKv3BwirnAns8O5yW2WAb2PzUn8IS1a+6KE=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XLn5f6RVf7kECSBD9eDue3WMlvmm63e6JwW1U/pnp08=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model.espresso.net</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ah9CQZHrYQpAKaT9rzUWBelDVdWUT748pyHYUHo8QRE=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model.espresso.shape</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bvJMvqB0OShO9vADpxJT7dyqevsMNz8BJx4InEjXdPs=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model.espresso.weights</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			J6wybUB2kAP5Xmy0PvEqcw0Mi7yY+b+9izOeS3vtC9A=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/model/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9aX9QtFqIDAnmO9u0wmXm0MAPSMg2fDo6pgxqSdZ+0s=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model1/neural_network_optionals/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LDTOHfI7g4xavyp/ZDfMo9MGftUJ/yXxHfaxG1grUes=
+			</data>
+		</dict>
+		<key>MobileNetV2_SSDLite.mlmodelc/model2/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SqOJJk/FzzRSNOYZOlHHtr7P5BpXGEtzDb1GmOc/KYg=
+			</data>
+		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
@@ -104,14 +302,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1GLctxmk7X06Qc4ZvlwEXVdw0cCijoIk0W2w79xMLQI=
+			eXUU7BQWKSDpm+Tx9F+oQm5fsSgf8fn2k0KQzTSc8dM=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uANAmNmRJPon6CJMfvHavJ6Fnf2VtRbRc493P5XyhLk=
+			gKdFQDR9f+uhtfyOtttWdzTT3sAmTISVpiDU938aqck=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
@@ -125,14 +323,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1GLctxmk7X06Qc4ZvlwEXVdw0cCijoIk0W2w79xMLQI=
+			eXUU7BQWKSDpm+Tx9F+oQm5fsSgf8fn2k0KQzTSc8dM=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uANAmNmRJPon6CJMfvHavJ6Fnf2VtRbRc493P5XyhLk=
+			gKdFQDR9f+uhtfyOtttWdzTT3sAmTISVpiDU938aqck=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
