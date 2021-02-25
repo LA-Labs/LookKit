@@ -127,6 +127,8 @@ public struct Face : Swift.Hashable, Swift.Identifiable {
   public static func == (a: LookKit.Face, b: LookKit.Face) -> Swift.Bool
 }
 public struct DetectedObject : Swift.Equatable {
+  public let identifier: Swift.String
+  public let confidence: Swift.Float
   public static func == (a: LookKit.DetectedObject, b: LookKit.DetectedObject) -> Swift.Bool
 }
 public struct Stack<Element> {
