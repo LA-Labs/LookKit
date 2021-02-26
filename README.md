@@ -85,10 +85,10 @@ Detector.detect(faceRectangle, with: options) { (result) in
 ## Multiple Requests
 ### Creating a pipe process
 ```swift
-// Creating Face rectangle dection
+// Create Face rectangle dection
 let faceRectangle = VFilter.faceRectangle()
         
-// Creation Object Dection.
+// Create Object Detection.
 // Sky, flower, water etc.
 let objectDetecting = VFilter.objectDetecting()
 
