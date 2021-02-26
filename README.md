@@ -95,6 +95,8 @@ let objectDetecting = VFilter.objectDetecting()
 // Combine 2 process to one pipe.
 // Every image in the batch images will go through the pipe.
 let pipeProcessing = faceRectangle |>> objectDetecting
+
+// Start detecting
 Detector.detect(pipeProcessing, with: options) { (result) in
 switch result {
    // The result type is ProcessedAsset
