@@ -140,6 +140,7 @@ Recognition.cluster(fetchOptions: options,
 # Demo Project 
 Just plug and play.
 Make sure you have enough photos with faces before running the project on iDevice/Simulator.
+
 https://github.com/LA-Labs/LookKit_Demo
 
 # Contributing
