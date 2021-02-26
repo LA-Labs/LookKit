@@ -68,7 +68,7 @@ let faceRectangle = VFilter.faceRectangle()
 ### Face detection 
 Call Vision detecotor with the filter request and fetch options.
 ```swift 
-Vision.detect(faceRectangle, with: options) { (result) in
+Detector.detect(faceRectangle, with: options) { (result) in
    switch result {
    // The result type is ProcessedAsset
    // Containt all photos with face recatangle detection
@@ -95,7 +95,7 @@ let objectDetecting = VFilter.objectDetecting()
 // Combine to pipe processing
 // Every image will go through the pipe.
 let pipeProcessing = faceRectangle |>> objectDetecting
-Vision.detect(pipeProcessing, with: options) { (result) in
+Detector.detect(pipeProcessing, with: options) { (result) in
 switch result {
    // The result type is ProcessedAsset
    // Containt all photos with face recatangle detection
@@ -122,7 +122,7 @@ let options = AssetFetchingOptions()
 let clusterOptions = ClusterOptions()
 
 // Start clustering
-Vision.cluster(fetchOptions: options,
+Recognition.cluster(fetchOptions: options,
                culsterOptions: clusterOptions) { (result) in
      // Result contian groups of faces
      // [[Face]]
