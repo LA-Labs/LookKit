@@ -111,7 +111,7 @@ switch result {
 
 # Face Grouping
 
-![](ezgif.com-resize.gif)
+![](face_group.gif)
 
 ### Collect people faces into groups
 ```swift
