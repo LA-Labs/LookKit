@@ -92,8 +92,8 @@ let faceRectangle = VFilter.faceRectangle()
 // Sky, flower, water etc.
 let objectDetecting = VFilter.objectDetecting()
 
-// Combine to pipe processing
-// Every image will go through the pipe.
+// Combine 2 process to one pipe.
+// Every image in the batch images will go through the pipe.
 let pipeProcessing = faceRectangle |>> objectDetecting
 Detector.detect(pipeProcessing, with: options) { (result) in
 switch result {
