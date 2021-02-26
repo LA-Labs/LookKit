@@ -5,8 +5,13 @@
 
 This package is aim to make using Computer Vision simple as possible.
 LookKit use 2 main features.
-1. Creating a Vision Operations Pipe.
-2. Creating a Stack Operation over desired photos.
+1. Creating a Image Analyzing Operation Pipe.
+2. Creating a Stack Operations over batch of photos.
+
+We have 3 main API's:
+1. ```Recognition``` - For face recognition/grouping.
+2. ```Detector``` - For using many available image detection operations.
+3.  ```ImageProcessor``` - For Image Processing like align faces, crop, rotation etc.
 
 # Requirement
 - iOS 13.0+
