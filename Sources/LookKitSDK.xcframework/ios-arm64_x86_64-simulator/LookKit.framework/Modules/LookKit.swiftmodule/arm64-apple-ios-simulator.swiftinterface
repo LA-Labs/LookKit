@@ -13,6 +13,11 @@ import simd
 public struct ClusterOptions {
   public init(minimumClusterSize: Swift.Int = 1, numberIterations: Swift.Int = 100, faceSimilarityThreshold: Swift.Double = 0.7)
 }
+@_hasMissingDesignatedInitializers public class ImageProcessor {
+  public static func alignFaces(from sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func alignFaces(fetchOptions: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  @objc deinit
+}
 public enum VisionProcessError : Swift.Error {
   case unknown
   case fetchImages
@@ -23,6 +28,11 @@ public enum VisionProcessError : Swift.Error {
 }
 public class AssetFetchingOptions {
   public init(sortDescriptors: [Foundation.NSSortDescriptor]? = nil, assetCollection: LookKit.AssetCollection = .allAssets, fetchLimit: Swift.Int = Int.max)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Recognition {
+  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, qualityFilter: LookKit.QualityFilter = .none, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, qualityFilter: LookKit.QualityFilter, completion: @escaping (Swift.Result<(result: Swift.Bool, distance: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
   @objc deinit
 }
 public struct ProcessedAsset : Swift.Hashable {
@@ -51,6 +61,11 @@ public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.Process
   public static func objectDetecting() -> LookKit.VisionFilter
   public static func imageQuality() -> LookKit.VisionFilter
   public static func faceEmbedding() -> LookKit.VisionFilter
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Detector {
+  public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
   @objc deinit
 }
 public struct ProcessAsset {
@@ -82,24 +97,6 @@ infix operator >> : ComparisonPrecedence
 infix operator |>> : ComparisonPrecedence
 public func |>> <U, T, Z>(f: @escaping (U) throws -> T, g: @escaping (T) throws -> Z) -> (U) throws -> Z
 infix operator >>> : ComparisonPrecedence
-@_hasMissingDesignatedInitializers public class Vision {
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Detector : LookKit.Vision {
-  public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ImageProcessor : LookKit.Detector {
-  public static func alignFaces(from sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func alignFaces(fetchOptions: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Recognition : LookKit.Detector {
-  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, qualityFilter: LookKit.QualityFilter = .none, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, qualityFilter: LookKit.QualityFilter, completion: @escaping (Swift.Result<(result: Swift.Bool, distance: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
-  @objc deinit
-}
 public enum QualityFilter {
   case none
   case low
@@ -142,20 +139,6 @@ public enum FaceComparisonError : Swift.Error {
   case tooManyFaces(Swift.Int)
   case cantFindFaces
   case error(Swift.Error)
-}
-public struct SamplePair {
-}
-public struct OrderedSamplePair {
-}
-public struct Pair {
-}
-public class ChineseWhispers {
-  public init()
-  public func chinese_whispers<T>(objects: [T], distanceFunction: (T, T) -> Swift.Double, eps: Swift.Double, numIterations: Swift.Int) -> [Swift.Int]
-  public func chinese_whispers(edges: [LookKit.SamplePair], numIterations: Swift.Int) -> [Swift.Int]
-  public func chinese_whispers(edges: [LookKit.OrderedSamplePair], numIterations: Swift.Int) -> [Swift.Int]
-  public func group<T>(objects: [T], labels: [Swift.Int]) -> [[T]]
-  @objc deinit
 }
 public enum AssetCollection {
   case allAssets
