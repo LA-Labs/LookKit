@@ -114,6 +114,9 @@ public struct Face : Swift.Hashable, Swift.Identifiable {
   }
   public let localIdnetifier: Swift.String
   public let faceCroppedImage: UIKit.UIImage
+  public var landmarks: Vision.VNFaceLandmarks2D? {
+    get
+  }
   public let quality: Swift.Float
   public let faceAngle: Swift.Double
   public func hash(into hasher: inout Swift.Hasher)

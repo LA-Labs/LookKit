@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LookKit
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LookKit
 import Accelerate
 import CoreML
 import Foundation
@@ -114,6 +114,9 @@ public struct Face : Swift.Hashable, Swift.Identifiable {
   }
   public let localIdnetifier: Swift.String
   public let faceCroppedImage: UIKit.UIImage
+  public var landmarks: Vision.VNFaceLandmarks2D? {
+    get
+  }
   public let quality: Swift.Float
   public let faceAngle: Swift.Double
   public func hash(into hasher: inout Swift.Hasher)
