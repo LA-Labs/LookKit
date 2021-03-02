@@ -22,7 +22,7 @@
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
 		<data>
-		1UVldcBbSd1tANS7IaJ/XXfq9hc=
+		VTKVjt9lrUPsKOE3FqSUcEq5gMw=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		L0BhD3Zj5++qtGlXY/o9Tqzb2qo=
+		1V7CY2IXRbSbClhETXHDzE3YF7w=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		oOJZf2bsxdGMnj0U25NIFw96MXA=
+		bTc9c1VpCpIxVHM1tQFAHLxxVJA=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -106,11 +106,11 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		L0BhD3Zj5++qtGlXY/o9Tqzb2qo=
+		1V7CY2IXRbSbClhETXHDzE3YF7w=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		oOJZf2bsxdGMnj0U25NIFw96MXA=
+		bTc9c1VpCpIxVHM1tQFAHLxxVJA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -176,7 +176,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VTszLoJodmY+jOj0KQfih677ad8ioVQ91FKkxfGFEU8=
+			P1C5ck/PVUAh2RszDxtPNK33rXO/Yx3v825oaz/LeMI=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
@@ -302,14 +302,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0dr49Rg7DYwPCaqwNSa4xKhydD3vQNsBE54OZYAzYsM=
+			pBBJ9wmEDJp9mFshHzo/2h/RA3OEo7+Moa2gZzMUutM=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KMdjwi6XqdO6jANGN1jYLiS4hmEGWuWo2sk9jiw1v6k=
+			UZRblE7K3xWX50q13d+2+N3UnrvBM+RddGXLzzgepI0=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
@@ -323,14 +323,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0dr49Rg7DYwPCaqwNSa4xKhydD3vQNsBE54OZYAzYsM=
+			pBBJ9wmEDJp9mFshHzo/2h/RA3OEo7+Moa2gZzMUutM=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KMdjwi6XqdO6jANGN1jYLiS4hmEGWuWo2sk9jiw1v6k=
+			UZRblE7K3xWX50q13d+2+N3UnrvBM+RddGXLzzgepI0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

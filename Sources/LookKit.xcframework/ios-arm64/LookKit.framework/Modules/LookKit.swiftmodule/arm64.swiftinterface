@@ -63,6 +63,23 @@ public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.Process
   public static func faceEmbedding() -> LookKit.VisionFilter
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class Defaults {
+  public static let shared: LookKit.Defaults
+  public enum FeaturePoints {
+    case points76
+    case points5
+    public static func == (a: LookKit.Defaults.FeaturePoints, b: LookKit.Defaults.FeaturePoints) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var minimumFaceArea: CoreGraphics.CGFloat
+  public var featurePointsAlgorithm: LookKit.Defaults.FeaturePoints
+  public var drawFeaturePoints: Swift.Bool
+  public var print: Swift.Bool
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class Detector {
   public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
   public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
@@ -151,6 +168,8 @@ public enum AssetCollection {
 }
 extension LookKit.PhotosAuthorizationError : Swift.Equatable {}
 extension LookKit.PhotosAuthorizationError : Swift.Hashable {}
+extension LookKit.Defaults.FeaturePoints : Swift.Equatable {}
+extension LookKit.Defaults.FeaturePoints : Swift.Hashable {}
 extension LookKit.VisionProcessType : Swift.Equatable {}
 extension LookKit.VisionProcessType : Swift.Hashable {}
 extension LookKit.QualityFilter : Swift.Equatable {}
