@@ -80,10 +80,20 @@ public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.Process
   public var print: Swift.Bool
   @objc deinit
 }
+public class ImageFetcherService {
+  public init(options: LookKit.ImageFetcherOptions = ImageFetcherOptions())
+  public func image(from identifier: Swift.String) -> UIKit.UIImage?
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class Detector {
   public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
   public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
   @objc deinit
+}
+extension PHImageRequestOptions {
+  public static var defaultOptions: Photos.PHImageRequestOptions {
+    get
+  }
 }
 public struct ProcessAsset {
 }
@@ -119,6 +129,7 @@ public enum QualityFilter {
   case low
   case medium
   case high
+  case extreme
   public static func == (a: LookKit.QualityFilter, b: LookKit.QualityFilter) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -148,6 +159,16 @@ public struct DetectedObject : Swift.Equatable {
   public let confidence: Swift.Float
   public static func == (a: LookKit.DetectedObject, b: LookKit.DetectedObject) -> Swift.Bool
 }
+public class ImageFetcherOptions {
+  public init(downsampleImageSize: CoreGraphics.CGFloat = 600, rquestOptions: Photos.PHImageRequestOptions = PHImageRequestOptions.defaultOptions)
+  @objc deinit
+}
+public struct SamplePair<T> where T : Swift.Comparable {
+}
+public struct OrderedSamplePair<T> {
+}
+public struct Pair<T> {
+}
 public struct Stack<Element> {
   public init()
   public mutating func push(_ element: Element)
@@ -160,11 +181,28 @@ public enum FaceComparisonError : Swift.Error {
   case cantFindFaces
   case error(Swift.Error)
 }
+public class ChineseWhisper {
+  public init()
+  public func cluster<T>(objects: [T], distanceFunction: (T, T) -> Swift.Double, eps: Swift.Double, numIterations: Swift.Int) -> [Swift.Int]
+  public func cluster(edges: [LookKit.SamplePair<Swift.Int>], numIterations: Swift.Int) -> [Swift.Int]
+  public func cluster(edges: [LookKit.OrderedSamplePair<Swift.Int>], numIterations: Swift.Int) -> [Swift.Int]
+  public func group<T>(objects: [T], labels: [Swift.Int]) -> [[T]]
+  @objc deinit
+}
+public struct DBScan {
+  public init()
+  public func cluster<Value>(values: [Value], epsilon: Swift.Double, minimumNumberOfPoints: Swift.Int, distanceFunction: (Value, Value) throws -> Swift.Double) rethrows -> [[Value]] where Value : Swift.Equatable
+}
 public enum AssetCollection {
   case allAssets
   case albumName(_: Swift.String)
   case assetCollection(_: Photos.PHAssetCollection)
   case identifiers(_: [Swift.String])
+}
+@_hasMissingDesignatedInitializers public class Cluster {
+  public static let ChineseWhispers: LookKit.ChineseWhisper
+  public static let DBSCAN: LookKit.DBScan
+  @objc deinit
 }
 extension LookKit.PhotosAuthorizationError : Swift.Equatable {}
 extension LookKit.PhotosAuthorizationError : Swift.Hashable {}
