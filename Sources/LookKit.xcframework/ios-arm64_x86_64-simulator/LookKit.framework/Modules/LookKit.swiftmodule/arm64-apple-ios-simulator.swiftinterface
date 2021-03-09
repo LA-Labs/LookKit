@@ -10,12 +10,21 @@ import Swift
 import UIKit
 import Vision
 import simd
+public enum ClusterType {
+  case DBSCAN
+  case ChineseWhispers
+  public static func == (a: LookKit.ClusterType, b: LookKit.ClusterType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
 public struct ClusterOptions {
-  public init(minimumClusterSize: Swift.Int = 1, numberIterations: Swift.Int = 100, faceSimilarityThreshold: Swift.Double = 0.7)
+  public init(minimumClusterSize: Swift.Int = 1, numberIterations: Swift.Int = 100, faceSimilarityThreshold: Swift.Double = 0.7, clusterType: LookKit.ClusterType = .ChineseWhispers)
 }
 @_hasMissingDesignatedInitializers public class ImageProcessor {
-  public static func alignFaces(from sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func alignFaces(fetchOptions: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func alignFaces(from sourceImage: UIKit.UIImage, processConfiguration: LookKit.ProcessConfiguration, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func alignFaces(fetchOptions: LookKit.AssetFetchingOptions, processConfiguration: LookKit.ProcessConfiguration, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
   @objc deinit
 }
 public enum VisionProcessError : Swift.Error {
@@ -31,11 +40,11 @@ public class AssetFetchingOptions {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Recognition {
-  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, qualityFilter: LookKit.QualityFilter = .none, completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, qualityFilter: LookKit.QualityFilter, completion: @escaping (Swift.Result<(result: Swift.Bool, distance: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(result: Swift.Bool, distance: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
   @objc deinit
 }
-public struct ProcessedAsset : Swift.Hashable {
+public struct ProcessOutput : Swift.Hashable {
   public let localIdentifier: Swift.String
   public let tags: [LookKit.DetectedObject]
   public let boundingBoxes: [CoreGraphics.CGRect]
@@ -44,7 +53,7 @@ public struct ProcessedAsset : Swift.Hashable {
   public var hashValue: Swift.Int {
     get
   }
-  public static func == (a: LookKit.ProcessedAsset, b: LookKit.ProcessedAsset) -> Swift.Bool
+  public static func == (a: LookKit.ProcessOutput, b: LookKit.ProcessOutput) -> Swift.Bool
 }
 public enum PhotosAuthorizationError : Swift.Error {
   case denied
@@ -55,7 +64,7 @@ public enum PhotosAuthorizationError : Swift.Error {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.ProcessAsset
+public typealias VisionFilter = (LookKit.ProcessInput) throws -> LookKit.ProcessInput
 @_hasMissingDesignatedInitializers public class VFilter {
   public static func faceRectangle() -> LookKit.VisionFilter
   public static func objectDetecting() -> LookKit.VisionFilter
@@ -63,37 +72,27 @@ public typealias VisionFilter = (LookKit.ProcessAsset) throws -> LookKit.Process
   public static func faceEmbedding() -> LookKit.VisionFilter
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class Defaults {
-  public static let shared: LookKit.Defaults
-  public enum FeaturePoints {
-    case points76
-    case points5
-    public static func == (a: LookKit.Defaults.FeaturePoints, b: LookKit.Defaults.FeaturePoints) -> Swift.Bool
-    public var hashValue: Swift.Int {
-      get
-    }
-    public func hash(into hasher: inout Swift.Hasher)
-  }
-  public var minimumFaceArea: CoreGraphics.CGFloat
-  public var featurePointsAlgorithm: LookKit.Defaults.FeaturePoints
-  public var drawFeaturePoints: Swift.Bool
-  public var print: Swift.Bool
-  @objc deinit
-}
 public class ImageFetcherService {
   public init(options: LookKit.ImageFetcherOptions = ImageFetcherOptions())
   public func image(from identifier: Swift.String) -> UIKit.UIImage?
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class Defaults {
+  public static let shared: LookKit.Defaults
+  public var print: Swift.Bool
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class Detector {
-  public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, completion: @escaping (Swift.Result<[LookKit.ProcessedAsset], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
   @objc deinit
 }
 extension PHImageRequestOptions {
   public static var defaultOptions: Photos.PHImageRequestOptions {
     get
   }
+}
+public struct ProcessInput {
 }
 public struct ProcessAsset {
 }
@@ -112,6 +111,29 @@ public enum VisionProcessType {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+public class ProcessConfiguration {
+  public init()
+  public var imageSize: CoreGraphics.CGFloat
+  public enum FeaturePoints {
+    case points76
+    case pointsDlib5
+    case pointsSphereFace5
+    public static func == (a: LookKit.ProcessConfiguration.FeaturePoints, b: LookKit.ProcessConfiguration.FeaturePoints) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var minimumFaceArea: CoreGraphics.CGFloat
+  public var minimumFeaturePointsConfidance: Swift.Float
+  public var featurePointsAlgorithm: LookKit.ProcessConfiguration.FeaturePoints
+  public var faceSize: Swift.Double
+  public var facePadding: Swift.Double
+  public var qualityFilter: LookKit.QualityFilter
+  public var drawFeaturePoints: Swift.Bool
+  public var print: Swift.Bool
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class PhotosAuthorizationService {
   public static func checkPhotoLibraryPermission(completion: @escaping (Swift.Result<Swift.Void, LookKit.PhotosAuthorizationError>) -> Swift.Void)
   @objc deinit
@@ -121,8 +143,8 @@ precedencegroup ComparisonPrecedence {
 }
 infix operator |> : ComparisonPrecedence
 infix operator >> : ComparisonPrecedence
-infix operator |>> : ComparisonPrecedence
-public func |>> <U, T, Z>(f: @escaping (U) throws -> T, g: @escaping (T) throws -> Z) -> (U) throws -> Z
+infix operator --> : ComparisonPrecedence
+public func --> <U, T, Z>(f: @escaping (U) throws -> T, g: @escaping (T) throws -> Z) -> (U) throws -> (Z)
 infix operator >>> : ComparisonPrecedence
 public enum QualityFilter {
   case none
@@ -160,7 +182,7 @@ public struct DetectedObject : Swift.Equatable {
   public static func == (a: LookKit.DetectedObject, b: LookKit.DetectedObject) -> Swift.Bool
 }
 public class ImageFetcherOptions {
-  public init(downsampleImageSize: CoreGraphics.CGFloat = 600, rquestOptions: Photos.PHImageRequestOptions = PHImageRequestOptions.defaultOptions)
+  public init(downsampleImageSize: CoreGraphics.CGFloat = 400, rquestOptions: Photos.PHImageRequestOptions = PHImageRequestOptions.defaultOptions)
   @objc deinit
 }
 public struct SamplePair<T> where T : Swift.Comparable {
@@ -204,11 +226,13 @@ public enum AssetCollection {
   public static let DBSCAN: LookKit.DBScan
   @objc deinit
 }
+extension LookKit.ClusterType : Swift.Equatable {}
+extension LookKit.ClusterType : Swift.Hashable {}
 extension LookKit.PhotosAuthorizationError : Swift.Equatable {}
 extension LookKit.PhotosAuthorizationError : Swift.Hashable {}
-extension LookKit.Defaults.FeaturePoints : Swift.Equatable {}
-extension LookKit.Defaults.FeaturePoints : Swift.Hashable {}
 extension LookKit.VisionProcessType : Swift.Equatable {}
 extension LookKit.VisionProcessType : Swift.Hashable {}
+extension LookKit.ProcessConfiguration.FeaturePoints : Swift.Equatable {}
+extension LookKit.ProcessConfiguration.FeaturePoints : Swift.Hashable {}
 extension LookKit.QualityFilter : Swift.Equatable {}
 extension LookKit.QualityFilter : Swift.Hashable {}
