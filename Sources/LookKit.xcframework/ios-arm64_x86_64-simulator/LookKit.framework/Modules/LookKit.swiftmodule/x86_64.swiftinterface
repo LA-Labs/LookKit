@@ -22,8 +22,15 @@ public enum ClusterType {
 public struct ClusterOptions {
   public init(minimumClusterSize: Swift.Int = 1, numberIterations: Swift.Int = 100, faceSimilarityThreshold: Swift.Double = 0.7, clusterType: LookKit.ClusterType = .ChineseWhispers)
 }
+@propertyWrapper public struct NonNegative<Value> where Value : Swift.Comparable, Value : Swift.Numeric {
+  public init(wrappedValue: Value)
+  public var wrappedValue: Value {
+    get
+    set
+  }
+}
 @_hasMissingDesignatedInitializers public class ImageProcessor {
-  public static func alignFaces(from sourceImage: UIKit.UIImage, processConfiguration: LookKit.ProcessConfiguration, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func alignFaces(in sourceImages: UIKit.UIImage..., processConfiguration: LookKit.ProcessConfiguration, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
   public static func alignFaces(fetchOptions: LookKit.AssetFetchingOptions, processConfiguration: LookKit.ProcessConfiguration, completion: @escaping (Swift.Result<[LookKit.Face], LookKit.VisionProcessError>) -> Swift.Void)
   @objc deinit
 }
@@ -41,7 +48,9 @@ public class AssetFetchingOptions {
 }
 @_hasMissingDesignatedInitializers public class Recognition {
   public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func compareFaces(sourceImage: UIKit.UIImage, targetImage: UIKit.UIImage, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(result: Swift.Bool, distance: Swift.Double), LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func verify(sourceImage: UIKit.UIImage, targetImages: UIKit.UIImage..., similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(sourceFaces: [LookKit.Face], verifiedFaces: [LookKit.Face]), LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func verify(sourceImage: UIKit.UIImage, targetOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(sourceFaces: [LookKit.Face], verifiedFaces: [LookKit.Face]), LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func verify(sourceImageIdentifier: Swift.String, targetOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(sourceFaces: [LookKit.Face], verifiedFaces: [LookKit.Face]), LookKit.FaceComparisonError>) -> Swift.Void)
   @objc deinit
 }
 public struct ProcessOutput : Swift.Hashable {
@@ -64,16 +73,30 @@ public enum PhotosAuthorizationError : Swift.Error {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public typealias VisionFilter = (LookKit.ProcessInput) throws -> LookKit.ProcessInput
-@_hasMissingDesignatedInitializers public class VFilter {
-  public static func faceRectangle() -> LookKit.VisionFilter
-  public static func objectDetecting() -> LookKit.VisionFilter
-  public static func imageQuality() -> LookKit.VisionFilter
-  public static func faceEmbedding() -> LookKit.VisionFilter
+public typealias Action = (LookKit.ProcessInput) throws -> LookKit.ProcessInput
+@_hasMissingDesignatedInitializers public class Filter {
+  public static var faceLocation: LookKit.Action {
+    get
+  }
+  public static var objectLocation: LookKit.Action {
+    get
+  }
+  public static var objectDetecting: LookKit.Action {
+    get
+  }
+  public static var faceQuality: LookKit.Action {
+    get
+  }
+  public static var faceLandmarks: LookKit.Action {
+    get
+  }
+  public static var faceEncoding: LookKit.Action {
+    get
+  }
   @objc deinit
 }
 public class ImageFetcherService {
-  public init(options: LookKit.ImageFetcherOptions = ImageFetcherOptions())
+  public init(options: LookKit.ImageFetcherOptions)
   public func image(from identifier: Swift.String) -> UIKit.UIImage?
   @objc deinit
 }
@@ -83,13 +106,21 @@ public class ImageFetcherService {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Detector {
-  public static func detect(_ pipe: @escaping LookKit.VisionFilter, with options: LookKit.AssetFetchingOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func detect(_ pipe: @escaping LookKit.VisionFilter, sourceImage: UIKit.UIImage, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func analyze(_ actions: @escaping LookKit.Action, with options: LookKit.AssetFetchingOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
+  public static func analyze(_ actions: @escaping LookKit.Action, sourceImage: UIKit.UIImage, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
+  public func faceLocations(in sourceImage: UIKit.UIImage, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.ProcessOutput], LookKit.VisionProcessError>) -> Swift.Void)
   @objc deinit
 }
 extension PHImageRequestOptions {
   public static var defaultOptions: Photos.PHImageRequestOptions {
     get
+  }
+}
+@propertyWrapper public struct Clamping<Value> where Value : Swift.Comparable {
+  public init(wrappedValue: Value, _ range: Swift.ClosedRange<Value>)
+  public var wrappedValue: Value {
+    get
+    set
   }
 }
 public struct ProcessInput {
@@ -113,25 +144,50 @@ public enum VisionProcessType {
 }
 public class ProcessConfiguration {
   public init()
-  public var imageSize: CoreGraphics.CGFloat
-  public enum FeaturePoints {
-    case points76
+  @LookKit.NonNegative public var fetchImageSize: CoreGraphics.CGFloat {
+    get
+    set
+    _modify
+  }
+  public enum LandmarksAlignmentAlgorithm {
+    case pointsDlib32
     case pointsDlib5
     case pointsSphereFace5
-    public static func == (a: LookKit.ProcessConfiguration.FeaturePoints, b: LookKit.ProcessConfiguration.FeaturePoints) -> Swift.Bool
+    public static func == (a: LookKit.ProcessConfiguration.LandmarksAlignmentAlgorithm, b: LookKit.ProcessConfiguration.LandmarksAlignmentAlgorithm) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
     public func hash(into hasher: inout Swift.Hasher)
   }
-  public var minimumFaceArea: CoreGraphics.CGFloat
-  public var minimumFeaturePointsConfidance: Swift.Float
-  public var featurePointsAlgorithm: LookKit.ProcessConfiguration.FeaturePoints
-  public var faceSize: Swift.Double
-  public var facePadding: Swift.Double
-  public var qualityFilter: LookKit.QualityFilter
+  public var landmarksAlignmentAlgorithm: LookKit.ProcessConfiguration.LandmarksAlignmentAlgorithm
+  public enum FaceEncoderModel {
+    case facenet
+    case VGGFace2_resnet_Lite
+    case VGGFace2_senet_Lite
+    public static func == (a: LookKit.ProcessConfiguration.FaceEncoderModel, b: LookKit.ProcessConfiguration.FaceEncoderModel) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var faceEncoderModel: LookKit.ProcessConfiguration.FaceEncoderModel
+  @LookKit.NonNegative public var minimumFaceArea: CoreGraphics.CGFloat {
+    get
+    set
+    _modify
+  }
+  @LookKit.NonNegative public var faceChipSize: Swift.Double {
+    get
+    set
+    _modify
+  }
+  @LookKit.Clamping public var faceChipPadding: Swift.Double {
+    get
+    set
+    _modify
+  }
+  public var minimumQualityFilter: LookKit.QualityFilter
   public var drawFeaturePoints: Swift.Bool
-  public var print: Swift.Bool
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PhotosAuthorizationService {
@@ -158,27 +214,28 @@ public enum QualityFilter {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public struct Face : Swift.Hashable, Swift.Identifiable {
+public struct Face : Swift.Equatable {
   public var id: Swift.String {
     get
   }
   public let localIdnetifier: Swift.String
   public let faceCroppedImage: UIKit.UIImage
+  public let faceObservation: Vision.VNFaceObservation
   public var landmarks: Vision.VNFaceLandmarks2D? {
     get
   }
   public let quality: Swift.Float
-  public let faceAngle: Swift.Double
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-  public typealias ID = Swift.String
+  public let roll: Swift.Double
+  public let faceEncoding: [Swift.Double]
   public static func == (a: LookKit.Face, b: LookKit.Face) -> Swift.Bool
+}
+extension Face {
+  public func distance(to rhs: LookKit.Face) -> Swift.Double
 }
 public struct DetectedObject : Swift.Equatable {
   public let identifier: Swift.String
   public let confidence: Swift.Float
+  public let normalizedLocation: CoreGraphics.CGRect
   public static func == (a: LookKit.DetectedObject, b: LookKit.DetectedObject) -> Swift.Bool
 }
 public class ImageFetcherOptions {
@@ -232,7 +289,9 @@ extension LookKit.PhotosAuthorizationError : Swift.Equatable {}
 extension LookKit.PhotosAuthorizationError : Swift.Hashable {}
 extension LookKit.VisionProcessType : Swift.Equatable {}
 extension LookKit.VisionProcessType : Swift.Hashable {}
-extension LookKit.ProcessConfiguration.FeaturePoints : Swift.Equatable {}
-extension LookKit.ProcessConfiguration.FeaturePoints : Swift.Hashable {}
+extension LookKit.ProcessConfiguration.LandmarksAlignmentAlgorithm : Swift.Equatable {}
+extension LookKit.ProcessConfiguration.LandmarksAlignmentAlgorithm : Swift.Hashable {}
+extension LookKit.ProcessConfiguration.FaceEncoderModel : Swift.Equatable {}
+extension LookKit.ProcessConfiguration.FaceEncoderModel : Swift.Hashable {}
 extension LookKit.QualityFilter : Swift.Equatable {}
 extension LookKit.QualityFilter : Swift.Hashable {}
