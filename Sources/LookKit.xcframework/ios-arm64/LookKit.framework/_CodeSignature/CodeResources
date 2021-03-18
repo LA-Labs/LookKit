@@ -86,7 +86,7 @@
 		</data>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/coremldata.bin</key>
 		<data>
-		ex7WlY4ON5hOBEUkJ0NNDPctKSY=
+		8oncPvM4dtnvuRUlmtAV5IodCUg=
 		</data>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/metadata.json</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<data>
-		io+wHZBzeTiKCMkQ5fAXfukrbuw=
+		93WXnrlFnm5PSsuZgOvq7Qj1Kbs=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		OlCHosl3BXRnRTn5WaOqEfVSdxs=
+		DlNjnajRxuVrbGaAWSUDT/ae/fk=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		OlCHosl3BXRnRTn5WaOqEfVSdxs=
+		DlNjnajRxuVrbGaAWSUDT/ae/fk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -392,7 +392,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rX1B3izo7TEmhqFpE5B9dUL6RSxDFg3WBLgafInmby4=
+			/iFXPqL3FKGvlj3eATTWr7azSnr8+rqUn+WUznYVjck=
 			</data>
 		</dict>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/metadata.json</key>
@@ -525,7 +525,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0kxGmUmEpfuXEfUQ7ZpS8cqlBNrnrbJuphYfp22/aFs=
+			Dx3qELGh6tcbqC7ZqaoaN0OiyT11pDpGkL4KZV3ugvo=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
@@ -651,7 +651,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A10tNaisSxfgXp78bf4Zknhm3e55ANylvHcqvuQAe1Q=
+			qyz1Jco6o5o3oU8esGqnIQsQmNLrDZmOcG8WYZRDNsk=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
@@ -672,7 +672,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A10tNaisSxfgXp78bf4Zknhm3e55ANylvHcqvuQAe1Q=
+			qyz1Jco6o5o3oU8esGqnIQsQmNLrDZmOcG8WYZRDNsk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

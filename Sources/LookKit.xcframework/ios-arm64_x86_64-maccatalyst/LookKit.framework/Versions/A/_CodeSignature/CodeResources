@@ -78,7 +78,7 @@
 		</data>
 		<key>Resources/LookKit_VGGFace2_resnet50_Lite.mlmodelc/coremldata.bin</key>
 		<data>
-		ex7WlY4ON5hOBEUkJ0NNDPctKSY=
+		8oncPvM4dtnvuRUlmtAV5IodCUg=
 		</data>
 		<key>Resources/LookKit_VGGFace2_resnet50_Lite.mlmodelc/metadata.json</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Resources/MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
 		<data>
-		VTKVjt9lrUPsKOE3FqSUcEq5gMw=
+		1UVldcBbSd1tANS7IaJ/XXfq9hc=
 		</data>
 		<key>Resources/MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<data>
@@ -251,7 +251,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xw/xP+HodcC9mVgHrd4lbH46ysN/j4sNpxo8CCTyzPE=
+			zUtrlsqal44K+EfTe2ykQWlRadc8cdEdRHgEP0h1d+Y=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
@@ -272,7 +272,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xw/xP+HodcC9mVgHrd4lbH46ysN/j4sNpxo8CCTyzPE=
+			zUtrlsqal44K+EfTe2ykQWlRadc8cdEdRHgEP0h1d+Y=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
@@ -293,7 +293,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dr1i/dt69+Dbp/1kGmAzeyGwbyLROyAXGVPrx8bBzaE=
+			eNNGPIz4391ijXAGqo48Wu2Ego0aqeOgf+X8EHJptZQ=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/x86_64.swiftdoc</key>
@@ -314,7 +314,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dr1i/dt69+Dbp/1kGmAzeyGwbyLROyAXGVPrx8bBzaE=
+			eNNGPIz4391ijXAGqo48Wu2Ego0aqeOgf+X8EHJptZQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -454,7 +454,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rX1B3izo7TEmhqFpE5B9dUL6RSxDFg3WBLgafInmby4=
+			/iFXPqL3FKGvlj3eATTWr7azSnr8+rqUn+WUznYVjck=
 			</data>
 		</dict>
 		<key>Resources/LookKit_VGGFace2_resnet50_Lite.mlmodelc/metadata.json</key>
@@ -580,7 +580,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			P1C5ck/PVUAh2RszDxtPNK33rXO/Yx3v825oaz/LeMI=
+			VTszLoJodmY+jOj0KQfih677ad8ioVQ91FKkxfGFEU8=
 			</data>
 		</dict>
 		<key>Resources/MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
