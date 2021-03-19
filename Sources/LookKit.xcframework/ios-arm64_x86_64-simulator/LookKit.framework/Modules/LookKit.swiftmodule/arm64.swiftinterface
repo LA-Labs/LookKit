@@ -42,15 +42,21 @@ public enum VisionProcessError : Swift.Error {
   case emptyObservation
   case error(Swift.Error)
 }
+public struct Match {
+  public let sourceFace: LookKit.Face
+  public let targetFace: LookKit.Face
+  public let distance: Swift.Double
+  public let threshold: Swift.Double
+}
 public class AssetFetchingOptions {
   public init(sortDescriptors: [Foundation.NSSortDescriptor]? = nil, assetCollection: LookKit.AssetCollection = .allAssets, fetchLimit: Swift.Int = Int.max)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Recognition {
   public static func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
-  public static func verify(sourceImage: UIKit.UIImage, targetImages: UIKit.UIImage..., similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(sourceFaces: [LookKit.Face], verifiedFaces: [LookKit.Face]), LookKit.FaceComparisonError>) -> Swift.Void)
-  public static func verify(sourceImage: UIKit.UIImage, targetOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(sourceFaces: [LookKit.Face], verifiedFaces: [LookKit.Face]), LookKit.FaceComparisonError>) -> Swift.Void)
-  public static func verify(sourceImageIdentifier: Swift.String, targetOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<(sourceFaces: [LookKit.Face], verifiedFaces: [LookKit.Face]), LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func verify(sourceImage: UIKit.UIImage, targetImages: UIKit.UIImage..., similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.Match], LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func verify(sourceImage: UIKit.UIImage, targetOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.Match], LookKit.FaceComparisonError>) -> Swift.Void)
+  public static func verify(sourceImageIdentifier: Swift.String, targetOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.Match], LookKit.FaceComparisonError>) -> Swift.Void)
   @objc deinit
 }
 public struct ProcessOutput : Swift.Hashable {
