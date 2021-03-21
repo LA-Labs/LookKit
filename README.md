@@ -1,6 +1,4 @@
 
-
-![Screenshot](fr2.png)
 # LookKit SDK
 
 This package is aim to make using Computer Vision simple as possible.
@@ -69,7 +67,7 @@ let faceLocation = Actions.faceLocation
 // Sky, flower, water etc.
 let objectDetection = Actions.objectDetecting
 
-// Combine 2 request to one pipeline.
+// Combine 2 requests to one pipeline.
 // Every photo will go through the pipeline. both actions will be processed
 let pipelineProcess = faceLocation --> objectDetecting
 
