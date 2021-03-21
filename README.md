@@ -72,6 +72,11 @@ Detector.analyze(faceLocation,
 
 ## Chain Requests
 ### Create a pipeline process
+If we want to request more then one action on the image we can chain actions.
+The photo will go through the actions pipeline and the result will contain all the requsted data. ```swift // Face location, object detected, image quality```
+To make it more efficiant we use each action output as other action input.
+For example if we already have faces location we can pass this boxes to the landmark detecor and make much more faster. 
+
 ```swift
 // Create face location request (Action)
 let faceLocation = Actions.faceLocation
