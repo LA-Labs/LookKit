@@ -2,7 +2,7 @@
 # LookKit SDK
 
 LookKit is a very light weight package aim to make using Computer Vision simple as possible.
-Inspired by Dlib and Deepface frameworks syntex.
+Inspired by Dlib and Deepface frameworks syntex. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet and Apple Vision.
 LookKit contain no external dependency and was written in 100% pure Swift.
 
 It use 2 main concepts:
