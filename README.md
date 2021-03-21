@@ -49,10 +49,10 @@ Call Vision detecotor with the Action request and fetch images options.
 Detector.analyze(faceLocation, 
                  sourceImage: UIImage(named:"image1.jpg")) { (result) in
         switch result {
-            case .success(let photos):
-              // The result type is ```ProcessedAsset```
+            case .success(let result):
+              // The result type is ProcessOutput
               // Containt normilized face recatangle location
-              // photos[0].boundingBoxes
+              // result[0].boundingBoxes
             case .failure(let error):
               print(error)
         }
