@@ -170,11 +170,11 @@ Recognition.verify(sourceImage: face1,
       switch result {
          case .success(let result): 
           // result contain list of all faces that's has match on the target image.
-          // Match
-          // sourceFace: Face
-          // targetFace: Face
-          // distance: Double
-          // threshold: Double
+          // each Match has:
+            // sourceFace: Face // source cropped and align face
+            // targetFace: Face // target cropped and align face
+            // distance: Double // distance between faces
+            // threshold: Double // maximum threshold
          case .failure(let error):
              print(error)
          }
