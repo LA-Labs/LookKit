@@ -46,15 +46,16 @@ let faceLocation = Actions.faceLocation
 ### Face Location
 Call Vision detecotor with the Action request and fetch images options.
 ```swift 
-Detector.analyze(faceLocation, with: options) { (result) in
-   switch result {
-      case .success(let photos):
-         // The result type is ```ProcessedAsset```
-         // Containt normilized face recatangle location
-         // photos[0].boundingBoxes
-      case .failure(let error):
-          print(error)
-   }
+Detector.analyze(faceLocation, 
+                 sourceImage: UIImage(named:"image1.jpg")) { (result) in
+        switch result {
+            case .success(let photos):
+              // The result type is ```ProcessedAsset```
+              // Containt normilized face recatangle location
+              // photos[0].boundingBoxes
+            case .failure(let error):
+              print(error)
+        }
 }
 ```
 
