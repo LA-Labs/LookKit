@@ -210,11 +210,10 @@ Recognition.find(sourceImage: face1,
 
 ```
 
-# Face Grouping
+## Face Grouping
 
-![](face_group.gif)
+Like every photo app we want to cluster all faces to groups.
 
-### Collect people faces into groups
 ```swift
 // Create photo fetech options
 let options = AssetFetchingOptions()
