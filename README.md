@@ -180,6 +180,35 @@ Recognition.verify(sourceImage: face1,
          }
 }
 ```
+## Face Recognition
+
+Face recognition requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action.
+
+```swift
+// source image must contian at least one face. 
+let face1 = UIImage(named: "face1")!
+
+// We fetch the last 100 photos in the user gallery.
+let fetchAssetOptions = AssetFetchingOptions(sortDescriptors: nil,
+                                             assetCollection: .allAssets,
+                                             fetchLimit: 100)
+                                             
+// Then We try to find all images contain the source face.
+Recognition.find(sourceImage: face1,
+                 galleyFetchOptions: fetchAssetOptions,
+                 similarityThreshold: 0.75,
+                 processConfiguration: cofig) { (result) in
+               
+                switch result {
+                    case .success(let compression):
+                        print(compression.count)
+                    case .failure(let error):
+                        print(error)
+              }
+}
+
+
+```
 
 # Face Grouping
 
