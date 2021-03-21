@@ -153,6 +153,33 @@ public enum AssetCollection {
 }
 ```
 
+# Face Recognition
+A modern face recognition pipeline consists of 4 common stages: detect, align, represent and verify. LookKit handles all these common stages in the background. You can just call its verification, find or analysis function in its interface with a single line of code.
+
+## Face Verification
+Verification function offers to verify face pairs as same person or different persons. 
+Treshold can be adjusted.
+
+```swift
+let face1 = UIImage(named: "face1")!
+let face2 = UIImage(named: "face2")!
+
+Recognition.verify(sourceImage: face1,
+                   targetImages: face2,
+                   similarityThreshold: 0.7) { (result) in
+      switch result {
+         case .success(let result): 
+          // result contain list of all faces that's has match on the target image.
+          // Match
+          // sourceFace: Face
+          // targetFace: Face
+          // distance: Double
+          // threshold: Double
+         case .failure(let error):
+             print(error)
+         }
+}
+```
 
 # Face Grouping
 
