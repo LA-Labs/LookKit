@@ -48,11 +48,10 @@ Call Vision detecotor with the Action request and fetch images options.
 ```swift 
 Detector.analyze(faceLocation, with: options) { (result) in
    switch result {
-   // The result type is ProcessedAsset
-   // Containt all photos with face recatangle detection
-   // photos[0].boundingBoxes
       case .success(let photos):
-          print(photos)
+         // The result type is ```ProcessedAsset```
+         // Containt normilized face recatangle location
+         // photos[0].boundingBoxes
       case .failure(let error):
           print(error)
    }
