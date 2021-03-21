@@ -93,9 +93,11 @@ Detector.detect(pipelineProcess,
 Sometime we want to work with more then one source image. LookKit SDK has 2 options.
 We can path array of images
 ```swift
-// Start detecting
 
+// User photos
 let images = [UIImage(named: "image1.jpg"), UIImage(named: "image2.jpg"), UIImage(named: "image3.jpg")]
+
+// Start detecting
 Detector.detect(faceLocation, 
                 sourceImage: images) { (result) in
 ```
