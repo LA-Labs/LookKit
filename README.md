@@ -39,7 +39,7 @@ import LookKit
 ### Create Action
 Firstly, LookKit provides useful initializers to create face location request with ```Actions```. 
 ```swift 
-// Create image processing request
+// Create face location request (Action)
 let faceLocation = Actions.faceLocation
 ````
 
