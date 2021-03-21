@@ -113,7 +113,9 @@ We can path array of images
 ```swift
 
 // User photos
-let images = [UIImage(named: "image1.jpg"), UIImage(named: "image2.jpg"), UIImage(named: "image3.jpg")]
+let images = [UIImage(named: "image1.jpg"), 
+              UIImage(named: "image2.jpg"), 
+              UIImage(named: "image3.jpg")]
 
 // Start detecting
 Detector.detect(faceLocation, 
