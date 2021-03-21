@@ -34,9 +34,33 @@ import LookKit
 ```
 # Usage
 
-## Basic Usage
+## Basic Usage Face Location
+
+### Create Action
+Firstly, LookKit provides useful initializers to create face location request with ```Actions```. 
+```swift 
+// Create image processing request
+let faceLocation = Actions.faceLocation
+````
+
+### Face Location
+Call Vision detecotor with the Action request and fetch images options.
+```swift 
+Detector.analyze(faceLocation, with: options) { (result) in
+   switch result {
+   // The result type is ProcessedAsset
+   // Containt all photos with face recatangle detection
+   // photos[0].boundingBoxes
+      case .success(let photos):
+          print(photos)
+      case .failure(let error):
+          print(error)
+   }
+}
+```
+
 ### Fetch options
-Firstly, LookKit provides useful initializers to create asset fetching options using ```AssetFetchingOptions```
+ asset fetching options using ```AssetFetchingOptions```
 ```swift 
 // Create default fetch options
 let options = AssetFetchingOptions()
@@ -59,30 +83,6 @@ public enum AssetCollection {
     case albumName(_ name: String)
     case assetCollection(_ collection: PHAssetCollection)
     case identifiers(_ ids: [String])
-}
-```
-
-### Create Action
-Next we need to create detection request with ```Actions```. 
-```swift 
-// Create image processing request
-let faceLocation = Actions.faceLocation
-````
-
-
-### Face detection 
-Call Vision detecotor with the filter request and fetch options.
-```swift 
-Detector.analyze(faceLocation, with: options) { (result) in
-   switch result {
-   // The result type is ProcessedAsset
-   // Containt all photos with face recatangle detection
-   // photos[0].boundingBoxes
-      case .success(let photos):
-          print(photos)
-      case .failure(let error):
-          print(error)
-   }
 }
 ```
 
