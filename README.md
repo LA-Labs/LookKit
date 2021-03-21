@@ -72,11 +72,10 @@ let objectDetection = Actions.objectDetecting
 let pipelineProcess = faceLocation --> objectDetecting
 
 // Start detecting
-Detector.detect(pipelineProcess, with: options) { (result) in
-
+Detector.detect(pipelineProcess, 
+                sourceImage: UIImage(named: "image1.jpg")) { (result) in
 // You can path it as a function 
 // Detector.detect(faceLocation --> objectDetecting, with: options) { (result) in
-
            switch result {
               case .success(let result):
                   // The result type is ProcessOutput
