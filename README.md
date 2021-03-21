@@ -180,9 +180,9 @@ Recognition.verify(sourceImage: face1,
          }
 }
 ```
-## Face Recognition
+## Face Identification
 
-Face recognition requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action.
+Face identification requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action.
 
 ```swift
 // source image must contian at least one face. 
