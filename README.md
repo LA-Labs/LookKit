@@ -62,18 +62,18 @@ public enum AssetCollection {
 }
 ```
 
-### Create filter
-Next we need to create detection request with ```VFilter```. 
+### Create Action
+Next we need to create detection request with ```Actions```. 
 ```swift 
 // Create image processing request
-let faceRectangle = VFilter.faceRectangle()
+let faceLocation = Actions.faceLocation
 ````
 
 
 ### Face detection 
 Call Vision detecotor with the filter request and fetch options.
 ```swift 
-Detector.detect(faceRectangle, with: options) { (result) in
+Detector.analyze(faceLocation, with: options) { (result) in
    switch result {
    // The result type is ProcessedAsset
    // Containt all photos with face recatangle detection
