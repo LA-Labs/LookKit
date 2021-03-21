@@ -1,7 +1,7 @@
 
 # LookKit SDK
 
-This package is a light weight framework aim to make using Computer Vision simple as possible, Inspired by great Dlib and Deepface frameworks.
+LookKit is a very light weight package aim to make using Computer Vision simple as possible, Inspired by great Dlib and Deepface frameworks.
 LookKit is written in 100% pure Swift and contain no external dependency like openCV, Dlib, etc.
 
 It use 2 main concepts:
