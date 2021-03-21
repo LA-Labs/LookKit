@@ -44,10 +44,10 @@ let faceLocation = Actions.faceLocation
 ````
 
 ### Face Location
-Call Vision detecotor with the Action request and fetch images options.
+Call ```Detector``` with the Action request and the source image.
 ```swift 
 Detector.analyze(faceLocation, 
-                 sourceImage: UIImage(named:"image1.jpg")) { (result) in
+                 sourceImage: UIImage(named: "image1.jpg")) { (result) in
         switch result {
             case .success(let result):
               // The result type is ProcessOutput
@@ -80,12 +80,11 @@ Detector.detect(pipelineProcess, with: options) { (result) in
 // Detector.detect(faceLocation --> objectDetecting, with: options) { (result) in
 
            switch result {
-              // The result type is ProcessOutput
-              // Containt all photos with face recatangle detection
-              // photos[0].boundingBoxes
-              // photos[0].tags
-              case .success(let photos):
-                print(photos)
+              case .success(let result):
+                  // The result type is ProcessOutput
+                  // Containt normilized face recatangle location
+                  // result[0].boundingBoxes
+                  // result[0].tags
               case .failure(let error):
                 print(error)
           }
