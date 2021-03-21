@@ -120,7 +120,7 @@ let images = [UIImage(named: "image1.jpg"),
 
 // Start detecting
 Detector.detect(faceLocation, 
-                sourceImage: images) { (result) in
+                sourceImages: images) { (result) in
 ```
 But this is not recommand for large amount of photos due to high memory allocation.
 LookKit SDK provice usful fetch options to work with user photo gallery and let you focus on your user experience.
