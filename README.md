@@ -6,7 +6,7 @@ Inspired by Dlib and Deepface frameworks syntex.
 LookKit contain no external dependency and was written in 100% pure Swift.
 
 It use 2 main concepts:
-1. Image Analyzing Operation Pipeline.
+1. Image Analyzing Pipeline.
 2. Stack Operations over batch of photos.
 
 It has 3 main API's:
