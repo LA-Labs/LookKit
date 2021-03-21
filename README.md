@@ -18,6 +18,7 @@ It has 3 main API's:
 ## Features
 
 - [x] Face Location, Face Landmarks, Face Quality and much more.
+- [x] Face Recognition like Face verification and Face grouping over user gallery.
 - [x] 100% pure Swift. No external dependency like openCV, Dlib, etc.
 - [x] Chainable Request.
 - [x] Image processing, Crop and align faces for creation faces data base.
