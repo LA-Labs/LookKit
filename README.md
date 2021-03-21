@@ -1,15 +1,27 @@
 
 # LookKit SDK
 
-This package is aim to make using Computer Vision simple as possible.
-LookKit use 2 main features.
-1. Creating a Image Analyzing Operation Pipe.
-2. Creating a Stack Operations over batch of photos.
+This package is a light weight framework aim to make using Computer Vision simple as possible, Inspired by great Dlib and Deepface frameworks.
+LookKit is written in 100% pure Swift and contain no external dependency like openCV, Dlib, etc.
 
-We have 3 main API's:
+It use 2 main concepts:
+1. Image Analyzing Operation Pipeline.
+2. Stack Operations over batch of photos.
+
+It has 3 main API's:
 1. ```Recognition``` - For face recognition/grouping.
 2. ```Detector``` - For using many available image detection operations.
 3.  ```ImageProcessor``` - For Image Processing like align faces, crop, rotation etc.
+
+
+## Features
+
+- [x] Face Location, Face Landmarks, Face Quality and much more.
+- [x] 100% pure Swift. No external dependency like openCV, Dlib, etc.
+- [x] Chainable Request.
+- [x] Image processing, Crop and align faces for creation faces data base.
+- [x] Fully integrated to work with user photo library out of the box.
+- [x] Suppoted both iDevices and macOS.
 
 # Requirement
 - iOS 13.0+
