@@ -79,7 +79,7 @@ Detector.detect(pipelineProcess,
            switch result {
               case .success(let result):
                   // The result type is ProcessOutput
-                  // Containt normilized face recatangle location
+                  // Containt normilized face recatangle location and object detected.
                   // result[0].boundingBoxes
                   // result[0].tags
               case .failure(let error):
