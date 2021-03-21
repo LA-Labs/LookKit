@@ -59,6 +59,40 @@ Detector.analyze(faceLocation,
 }
 ```
 
+## Chain Requests
+### Create a pipeline process
+```swift
+// Create face location request (Action)
+let faceLocation = Actions.faceLocation
+        
+// Create Object Detection request (Action).
+// Sky, flower, water etc.
+let objectDetection = Actions.objectDetecting
+
+// Combine 2 request to one pipeline.
+// Every photo will go through the pipeline. both actions will be processed
+let pipelineProcess = faceLocation --> objectDetecting
+
+// Start detecting
+Detector.detect(pipelineProcess, with: options) { (result) in
+
+// You can path it as a function 
+// Detector.detect(faceLocation --> objectDetecting, with: options) { (result) in
+
+           switch result {
+              // The result type is ProcessOutput
+              // Containt all photos with face recatangle detection
+              // photos[0].boundingBoxes
+              // photos[0].tags
+              case .success(let photos):
+                print(photos)
+              case .failure(let error):
+                print(error)
+          }
+}
+```
+
+
 ### Fetch options
  asset fetching options using ```AssetFetchingOptions```
 ```swift 
@@ -86,35 +120,6 @@ public enum AssetCollection {
 }
 ```
 
-
-## Multiple Requests
-### Creating a pipe process
-```swift
-// Create Face rectangle dection
-let faceRectangle = VFilter.faceRectangle()
-        
-// Create Object Detection.
-// Sky, flower, water etc.
-let objectDetecting = VFilter.objectDetecting()
-
-// Combine 2 process to one pipe.
-// Every image in the batch images will go through the pipe.
-let pipeProcessing = faceRectangle |>> objectDetecting
-
-// Start detecting
-Detector.detect(pipeProcessing, with: options) { (result) in
-switch result {
-   // The result type is ProcessedAsset
-   // Containt all photos with face recatangle detection
-   // photos[0].boundingBoxes
-   // photos[0].tags
-      case .success(let photos):
-          print(photos)
-      case .failure(let error):
-          print(error)
-   }
-}
-```
 
 # Face Grouping
 
