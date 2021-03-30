@@ -16,38 +16,6 @@
 		<data>
 		Y9uz0v35Wj1gQPHYW1afBckyRkk=
 		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/analytics/coremldata.bin</key>
-		<data>
-		OuaTb9K+SRHfg2S1aw+TWrYsiIM=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/coremldata.bin</key>
-		<data>
-		AQvAzAwnWzZ/J1pS1woyRDa3BLA=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/metadata.json</key>
-		<data>
-		QNXU4fMrfdI1y/OT2ovgwc0eW3U=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model.espresso.net</key>
-		<data>
-		Y4yq4VNsG5kQcQNCkWtV0PQOriQ=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model.espresso.shape</key>
-		<data>
-		b8Jwoh6dNzlAy81ySIkrNC7GsuM=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model.espresso.weights</key>
-		<data>
-		6kNMMXODsJeSQqRVTziVP/Zh0oU=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model/coremldata.bin</key>
-		<data>
-		6VWi6JRb9Ai4H32nWvXDA/GPYpU=
-		</data>
-		<key>LookKit_AgeNet_Lite.mlmodelc/neural_network_optionals/coremldata.bin</key>
-		<data>
-		uA3l0Th1hUHF8FJlrRRKufqG0ds=
-		</data>
 		<key>LookKit_FaceNet.mlmodelc/analytics/coremldata.bin</key>
 		<data>
 		w0Y/pShWk4CQ8Vts39s1ce7k/sA=
@@ -80,13 +48,49 @@
 		<data>
 		uA3l0Th1hUHF8FJlrRRKufqG0ds=
 		</data>
+		<key>LookKit_Facial_expression.mlmodelc/analytics/coremldata.bin</key>
+		<data>
+		uxD9LGi0lSWmBgfyj2+uTwbOD/A=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/coremldata.bin</key>
+		<data>
+		OpXOkK1JZXE1b19CaXKs+0wxw2o=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/metadata.json</key>
+		<data>
+		AmR8dRDNNzmsJPpMNfGptLgfNDk=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/model.espresso.net</key>
+		<data>
+		Su/zSol+wac55HidgcOHLnH7gZI=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/model.espresso.shape</key>
+		<data>
+		e+AEibrIh86hJr+fu3PEm0+aTP0=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/model.espresso.weights</key>
+		<data>
+		pVFkGYLqzANhDE+y0t40lMNgqeU=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/model.rank.info.json</key>
+		<data>
+		G9jOKPMHXIaZBopGKOvWZJFbSho=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/model/coremldata.bin</key>
+		<data>
+		iwAaqkl0mrwRkCEU0nQ4fJokeuQ=
+		</data>
+		<key>LookKit_Facial_expression.mlmodelc/neural_network_optionals/coremldata.bin</key>
+		<data>
+		tkgF5pxT7RlO+9uypQti9obolyA=
+		</data>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/analytics/coremldata.bin</key>
 		<data>
 		Y/oXLckxNGVbPONswbTzeXTtjDI=
 		</data>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/coremldata.bin</key>
 		<data>
-		ex7WlY4ON5hOBEUkJ0NNDPctKSY=
+		8oncPvM4dtnvuRUlmtAV5IodCUg=
 		</data>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/metadata.json</key>
 		<data>
@@ -122,7 +126,7 @@
 		</data>
 		<key>LookKit_VGGFace2_senet50_Lite.mlmodelc/coremldata.bin</key>
 		<data>
-		Th6MTsWYjVTH6FvdfbXW8Nwx618=
+		GyOEqqereyrbwxadQTEgOt+QWgg=
 		</data>
 		<key>LookKit_VGGFace2_senet50_Lite.mlmodelc/metadata.json</key>
 		<data>
@@ -158,11 +162,11 @@
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
 		<data>
-		6rwH2CKMOJC7nwq6clyRov0hPmM=
+		1UVldcBbSd1tANS7IaJ/XXfq9hc=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<data>
-		93WXnrlFnm5PSsuZgOvq7Qj1Kbs=
+		io+wHZBzeTiKCMkQ5fAXfukrbuw=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -226,27 +230,27 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		+D1ljEFxABbshC1qWPTXf4YYqPQ=
+		PEqjxbMKFlYvxF/jOJWdYtc91Cw=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		yHWqqfxWoEReHEUPTaibMzATh34=
+		ah80KGFn+5gG8prrJKaaY68LseY=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		QRvQCka8aWPHfxLY/wDpuwPUGqg=
+		DWjCKqYCHkE1ukOVfa37/K/ygn8=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		+D1ljEFxABbshC1qWPTXf4YYqPQ=
+		PEqjxbMKFlYvxF/jOJWdYtc91Cw=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		yHWqqfxWoEReHEUPTaibMzATh34=
+		ah80KGFn+5gG8prrJKaaY68LseY=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		QRvQCka8aWPHfxLY/wDpuwPUGqg=
+		DWjCKqYCHkE1ukOVfa37/K/ygn8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -267,62 +271,6 @@
 			<key>hash2</key>
 			<data>
 			AkEFPREUvgY/vyclOYgt9uU5316/P2yY80hUnEGXABw=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/analytics/coremldata.bin</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fU4SjXt2VJiTqBsSnbtxKDj09xoE7fjZKThT0pljMkI=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/coremldata.bin</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wuAdHBLLFcJWL0o1y16JmrySwPwH38bSqtNTg4iAbeQ=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/metadata.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+N71kgkar4pYaODzWbu8Sc9dfy6a5thvi+mil0hiKUE=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model.espresso.net</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WQGCthgfIs9pfDfA0UteFRtkTclhQxNXuoAVU3Uj9P4=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model.espresso.shape</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			yzSevaiYRLIvUaoISAKIZWPcsSHRVOO/HSN1xUbHols=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model.espresso.weights</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+UWiUVl8Rppe+536uWmlKfGDk/w7vhAeaiJkAgDz+Qw=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/model/coremldata.bin</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+MlV36tz8WnMv4bl5YZzKCpdaaW0lgCAUTq4fsBMP+0=
-			</data>
-		</dict>
-		<key>LookKit_AgeNet_Lite.mlmodelc/neural_network_optionals/coremldata.bin</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			LDTOHfI7g4xavyp/ZDfMo9MGftUJ/yXxHfaxG1grUes=
 			</data>
 		</dict>
 		<key>LookKit_FaceNet.mlmodelc/analytics/coremldata.bin</key>
@@ -381,6 +329,69 @@
 			LDTOHfI7g4xavyp/ZDfMo9MGftUJ/yXxHfaxG1grUes=
 			</data>
 		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/analytics/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RlbpYvxKeaDtzofrS7257fcnX8oavjI2nePUNd1oykQ=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Yjd5kb9LqnoGhjRWoJabSufgILkKraWJ6Mbr31q68cQ=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/metadata.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6xDVcGkyLqUjgMT8yc33U9lLNc+ED6j1UAlbEJmtF9E=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/model.espresso.net</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5W/55eOZfVYvp7y2VmykvijLvfGhuYaLLfDJ1tvwNkY=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/model.espresso.shape</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rnt0vnLYzM9FEesjYvV7rC7i4ipkdYRFOTVwNZKgA9E=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/model.espresso.weights</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LJiohWgvFyKgH6rpAkK8nWAQIMqRl/n2FL3U/zbhENg=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/model.rank.info.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+KWibjBW62+wbe6z28z9iK50kAIAyYxwtZZru37J1N4=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/model/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6/iWLdYeAhqZZ2hIs4l0Q3zvwklyJIgB+kFBvK/2fVc=
+			</data>
+		</dict>
+		<key>LookKit_Facial_expression.mlmodelc/neural_network_optionals/coremldata.bin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WTG9U2xFUClKISxvyNPBvuddqBeYC6C2cchgPa+zYjg=
+			</data>
+		</dict>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/analytics/coremldata.bin</key>
 		<dict>
 			<key>hash2</key>
@@ -392,7 +403,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rX1B3izo7TEmhqFpE5B9dUL6RSxDFg3WBLgafInmby4=
+			/iFXPqL3FKGvlj3eATTWr7azSnr8+rqUn+WUznYVjck=
 			</data>
 		</dict>
 		<key>LookKit_VGGFace2_resnet50_Lite.mlmodelc/metadata.json</key>
@@ -455,7 +466,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pjPBUNPQ5NoFjpvf9UHNvup/GgI1qlqXf1kx6j/48U0=
+			/kf65vI0QUTEjQQaVrZ0VcT8L3agLvHYqjgMcZTDGZ4=
 			</data>
 		</dict>
 		<key>LookKit_VGGFace2_senet50_Lite.mlmodelc/metadata.json</key>
@@ -518,14 +529,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V4Vwx9Cc61fGQkZKzkm0sQelDoQQwh84WHhSnueY1v0=
+			VTszLoJodmY+jOj0KQfih677ad8ioVQ91FKkxfGFEU8=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dx3qELGh6tcbqC7ZqaoaN0OiyT11pDpGkL4KZV3ugvo=
+			0kxGmUmEpfuXEfUQ7ZpS8cqlBNrnrbJuphYfp22/aFs=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
@@ -637,42 +648,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z+XEREspadCak/iJ7+GistKKXqhSWvifLzD0KlgaWCE=
+			gi6DLrMMj92vrEgsGiiL043KwyWBvvPkzNjxtXgZkXA=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x0wdtGP35uuDhuUPU8UhqsXt1dHLJ8CBI0MWyGutEho=
+			z2bdDrFkntHlwtGVEMR2D5d26oEDaZjL3bdSrCxN3z8=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ckZHOej7s/2vmXP5Ka+zcGyZOVMlaoToVc/1Ts3x4Do=
+			wz6qBBmX3TDTcxGNPh9oTa2GcIH87Vk4AEsSUN+GNLk=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z+XEREspadCak/iJ7+GistKKXqhSWvifLzD0KlgaWCE=
+			gi6DLrMMj92vrEgsGiiL043KwyWBvvPkzNjxtXgZkXA=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x0wdtGP35uuDhuUPU8UhqsXt1dHLJ8CBI0MWyGutEho=
+			z2bdDrFkntHlwtGVEMR2D5d26oEDaZjL3bdSrCxN3z8=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ckZHOej7s/2vmXP5Ka+zcGyZOVMlaoToVc/1Ts3x4Do=
+			wz6qBBmX3TDTcxGNPh9oTa2GcIH87Vk4AEsSUN+GNLk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
