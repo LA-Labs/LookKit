@@ -10,8 +10,9 @@ It use 2 main concepts:
 2. Process mulitple pipelines over batch of photos.
 
 It has 3 main API's:
-1. ```Recognition``` - For face recognition/grouping.
-2. ```Detector``` - For using many available image detection operations.
+1. ```DeepLook``` = For fast simple actions.
+1. ```Recognition``` - For face Recognition/Identification/Grouping.
+2. ```Detector``` - For using many available image deep looking operations.
 3.  ```ImageProcessor``` - For Image Processing like align faces, crop, rotation etc.
 
 
