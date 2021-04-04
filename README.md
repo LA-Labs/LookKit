@@ -22,7 +22,7 @@ It has 3 main API's:
 - [x] Face Recognition like Face verification and Face grouping over user gallery.
 - [x] 100% pure Swift. No external dependency like openCV, Dlib, etc.
 - [x] Chainable Request.
-- [x] Image processing, Crop and align faces for creation faces data base.
+- [x] Image processing, Crop and align faces for creating faces data base.
 - [x] Fully integrated to work with user photo library out of the box.
 - [x] Suppoted both iDevices and macOS.
 
