@@ -1,32 +1,29 @@
 
 # LookKit SDK
 
-LookKit is a very light weight package aim to make using Computer Vision simple as possible.
-Inspired by Dlib and Deepface frameworks syntex. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet and Apple Vision.
-LookKit contain no external dependency and was written in 100% pure Swift.
+LookKit is a very lightweight package aim to make using Computer Vision as simple as possible. Inspired by Dlib and Deepface frameworks syntex. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift.
 
-It use 2 main concepts:
+It uses 2 main concepts:
 1. Image Analyzing Pipeline.
-2. Process mulitple pipelines over batch of photos.
+2. Process multiple pipelines over a batch of photos.
 
 It has 3 main API's:
 1. ```DeepLook``` = For fast simple actions.
 1. ```Recognition``` - For face Recognition/Identification/Grouping.
 2. ```Detector``` - For using many available image deep looking operations.
-3.  ```ImageProcessor``` - For Image Processing like align faces, crop, rotation etc.
+3.  ```ImageProcessor``` - For Image Processing like align faces, crop, rotation, etc.
 
 
 ## Features
 
-- [x] Face Location, Face Landmarks, Face Quality and much more.
+- [x] Face Location, Face Landmarks, Face Quality, and much more.
 - [x] Face Recognition like Face verification and Face grouping over user gallery.
 - [x] 100% pure Swift. No external dependency like openCV, Dlib, etc.
 - [x] Chainable Request.
-- [x] Image processing, Crop and align faces for creating faces data base.
+- [x] Image processing, Crop and align faces for creating a faces database.
 - [x] Fully integrated to work with user photo library out of the box.
-- [x] Suppoted both iDevices and macOS.
+- [x] Supported both iDevices and macOS.
 
-# Requirement
 - iOS 13.0+
 - Swift 5.3+
 - Xcode 12.0+
