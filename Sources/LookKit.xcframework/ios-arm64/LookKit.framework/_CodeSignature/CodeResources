@@ -126,7 +126,7 @@
 		</data>
 		<key>LookKit_VGGFace2_senet50_Lite.mlmodelc/coremldata.bin</key>
 		<data>
-		GyOEqqereyrbwxadQTEgOt+QWgg=
+		Th6MTsWYjVTH6FvdfbXW8Nwx618=
 		</data>
 		<key>LookKit_VGGFace2_senet50_Lite.mlmodelc/metadata.json</key>
 		<data>
@@ -162,11 +162,11 @@
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
 		<data>
-		1UVldcBbSd1tANS7IaJ/XXfq9hc=
+		6rwH2CKMOJC7nwq6clyRov0hPmM=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<data>
-		io+wHZBzeTiKCMkQ5fAXfukrbuw=
+		93WXnrlFnm5PSsuZgOvq7Qj1Kbs=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -230,27 +230,27 @@
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		PEqjxbMKFlYvxF/jOJWdYtc91Cw=
+		nQRilNx4ce1ONMGV0ND7KffeCPY=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		ah80KGFn+5gG8prrJKaaY68LseY=
+		jmirjVmPQwb4puHBHFrVP3KbQVU=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		DWjCKqYCHkE1ukOVfa37/K/ygn8=
+		PeviqOaTyMpPVmgQDWE618ZcvQs=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		PEqjxbMKFlYvxF/jOJWdYtc91Cw=
+		nQRilNx4ce1ONMGV0ND7KffeCPY=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		ah80KGFn+5gG8prrJKaaY68LseY=
+		jmirjVmPQwb4puHBHFrVP3KbQVU=
 		</data>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		DWjCKqYCHkE1ukOVfa37/K/ygn8=
+		PeviqOaTyMpPVmgQDWE618ZcvQs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -466,7 +466,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/kf65vI0QUTEjQQaVrZ0VcT8L3agLvHYqjgMcZTDGZ4=
+			pjPBUNPQ5NoFjpvf9UHNvup/GgI1qlqXf1kx6j/48U0=
 			</data>
 		</dict>
 		<key>LookKit_VGGFace2_senet50_Lite.mlmodelc/metadata.json</key>
@@ -529,14 +529,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VTszLoJodmY+jOj0KQfih677ad8ioVQ91FKkxfGFEU8=
+			V4Vwx9Cc61fGQkZKzkm0sQelDoQQwh84WHhSnueY1v0=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0kxGmUmEpfuXEfUQ7ZpS8cqlBNrnrbJuphYfp22/aFs=
+			Dx3qELGh6tcbqC7ZqaoaN0OiyT11pDpGkL4KZV3ugvo=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/model0/analytics/coremldata.bin</key>
@@ -648,42 +648,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gi6DLrMMj92vrEgsGiiL043KwyWBvvPkzNjxtXgZkXA=
+			fPmIXj3kTAdRiHhlC/eQlhP3rUfF3ADSKU7YbJIS9jc=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z2bdDrFkntHlwtGVEMR2D5d26oEDaZjL3bdSrCxN3z8=
+			o3Wie+vqwKhJ2tqPeJ4idYrrlBdiSjmLI0F0zixsLdw=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wz6qBBmX3TDTcxGNPh9oTa2GcIH87Vk4AEsSUN+GNLk=
+			pIJc2R53wnra2IfP2GDIRyM+tfYsow7uKN+/y41+KHY=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gi6DLrMMj92vrEgsGiiL043KwyWBvvPkzNjxtXgZkXA=
+			fPmIXj3kTAdRiHhlC/eQlhP3rUfF3ADSKU7YbJIS9jc=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z2bdDrFkntHlwtGVEMR2D5d26oEDaZjL3bdSrCxN3z8=
+			o3Wie+vqwKhJ2tqPeJ4idYrrlBdiSjmLI0F0zixsLdw=
 			</data>
 		</dict>
 		<key>Modules/LookKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wz6qBBmX3TDTcxGNPh9oTa2GcIH87Vk4AEsSUN+GNLk=
+			pIJc2R53wnra2IfP2GDIRyM+tfYsow7uKN+/y41+KHY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
