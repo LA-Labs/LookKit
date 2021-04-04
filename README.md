@@ -49,6 +49,7 @@ import LookKit
 ```DeepLook``` provide the most simple API for computer vision analysis. Unlike other API in this package ```DeepLook``` is not using a background thread. It is your responsibility to call it from any background thread you like, like ```DispatchQueue.global().async``` to not block the ```main``` thread. 
 
 ### Find faces in pictures
+![Screenshot](face_locations_demo.png)
 
 Find all the faces that appear in a picture:
 ```swift
