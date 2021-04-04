@@ -7,7 +7,7 @@ It uses 2 main concepts:
 1. Image Analyzing Pipeline.
 2. Process multiple pipelines over a batch of photos.
 
-It has 3 main API's:
+It has 4 main API's:
 1. ```DeepLook``` = For fast simple actions.
 1. ```Recognition``` - For face Recognition/Identification/Grouping.
 2. ```Detector``` - For using many available image deep looking operations.
