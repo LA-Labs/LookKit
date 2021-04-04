@@ -100,6 +100,7 @@ let faceLandmarks = DeepLook.faceLandmarks(image, knownFaceLocations: faceLocati
 ### Identify faces in pictures
 
 Recognize who appears in each photo.
+![Screenshot](face_recognition_demo.png)
 
 ```swift
 // load 2 images to compare.
