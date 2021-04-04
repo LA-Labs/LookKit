@@ -11,9 +11,6 @@ It has 4 main API's:
 2. ```Detector``` - For using many available image deep looking operations over batch of photos.
 3.  ```ImageProcessor``` - For Image Processing like align, crop, and rotate faces.
 
-
-
-
 ## Features
 
  - [x] Face Location, Face Landmarks, Face Quality, and much more.
@@ -23,7 +20,6 @@ It has 4 main API's:
  - [x] Image processing, Crop and align faces for creating a faces database.
  - [x] Fully integrated to work with user photo library out of the box.
  - [x] Supported both iDevices and macOS.
-
 
 ## Requirements
 
@@ -47,6 +43,78 @@ import LookKit
 ```
 # Usage
 
+### ```DeepLook```
+
+```DeepLook``` provide the most simple API for computer vision analysis. Unlike other API in this package ```DeepLook``` is not using a background thread. It is your responsibility to call it from any background thread you like, like ```DispatchQueue.global().async``` to not block the ```main``` thread. 
+
+### Find faces in pictures
+
+Find all the faces that appear in a picture:
+```swift
+// load image
+let image = UIImage(named: "your_image_name")!
+
+// find face locations
+let faceLocations = DeepLook.faceLocation(image) // Normalized rect. [CGRect]
+```
+```faceLocation(image)``` return an array of normalized vision bounding box. to convert it to ```CGRect``` in UIKit coordinate system you can use apple func ```VNImageRectForNormalizedRect```.
+
+### Find and manipulate facial features in pictures
+
+Get the locations and outlines of each person's eyes, nose, mouth and chin.
+
+```swift
+// load image
+let image = UIImage(named: "your_image_name")!
+
+// get facial landmarks for each face in the image.
+let faceLandmarks = DeepLook.faceLandmarks(image) // [VNFaceLandmarkRegion2D]
+```
+
+To extract facial landmarks normalized points.
+```swift
+let faceLandmarksPoints = faceLandmarks.map({ $0.normalizedPoints })
+```
+
+To convert it to UIKit coordinate system.
+```swift
+let points = faceLandmarksPoints.pointsInImage(imageSize: imageSize)
+             .map({ (point) -> CGPoint in
+                 CGPoint(x: point.x, y: imageSize.height - point.y)
+             })
+```
+
+If you already have the normlized face locations you can then call for faster result.
+
+```swift
+let faceLandmarks = DeepLook.faceLandmarks(image, knownFaceLocations: faceLocations)
+```
+
+
+### Identify faces in pictures
+
+Recognize who appears in each photo.
+
+```swift
+// load 2 images to compare.
+let known_image = UIImage(named: "angelina.jpg")
+let unknown_image = UIImage(named: "unknown.jpg")
+
+// encode faces in both images.
+let angelina_encoding = DeepLook.faceEncodings(known_image)[0] // array of encoding faces.
+let unknown_encoding = DeepLook.faceEncodings(unknown_image)[0] // array of encoding faces.
+
+// return result for each faces in the source image.
+// treshold default is set to 0.6.
+let result = DeepLook.compareFaces([angelina_encoding], faceToCompare: unknown_encoding) // [Bool]
+```
+
+if you want to have more control on the result you can call ```faceDistance``` and mange the distance by yourself.
+
+```swift
+// get array of double represent the l2 norm euclidean distance.
+let results = DeepLook.faceDistance([angelina_encoding], faceToCompare: unknown_encoding) // [Double]
+```
 ## Basic Usage Face Location
 
 ### Create Action
