@@ -3,7 +3,7 @@
 
 LookKit is a very lightweight package aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift inspired by Dlib and Deepface frameworks syntex.
 
-It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and then We process multiple IAPs over a batch of photos.
+It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and then We process multiple IAPs over a batch of photos keeping low memory footprints.
 
 It has 4 main API's:
 1. ```DeepLook``` = For fast simple analyzing actions over single photos.
