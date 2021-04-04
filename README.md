@@ -78,14 +78,18 @@ let faceLandmarksPoints = faceLandmarks.map({ $0.normalizedPoints })
 
 To convert it to UIKit coordinate system.
 ```swift
+
+// get image size
+let imageSize =  CGSize(width: myImage.cgImage!.width, height: myImage.cgImage!.height)
+
+// convert to UIKit coordinate system.
 let points = faceLandmarksPoints.pointsInImage(imageSize: imageSize)
              .map({ (point) -> CGPoint in
                  CGPoint(x: point.x, y: imageSize.height - point.y)
              })
 ```
 
-If you already have the normlized face locations you can then call for faster result.
-
+If you already have the normlized face locations you can use them for faster result.
 ```swift
 let faceLandmarks = DeepLook.faceLandmarks(image, knownFaceLocations: faceLocations)
 ```
