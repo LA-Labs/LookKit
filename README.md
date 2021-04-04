@@ -42,6 +42,7 @@ dependencies: [
 import LookKit
 ```
 # Usage
+## Basic Usege
 
 ### ```DeepLook```
 
@@ -119,7 +120,135 @@ if you want to have more control on the result you can call ```faceDistance``` a
 // get array of double represent the l2 norm euclidean distance.
 let results = DeepLook.faceDistance([angelina_encoding], faceToCompare: unknown_encoding) // [Double]
 ```
-## Basic Usage Face Location
+
+
+## Advance Usege
+### ```Recognition```
+
+A modern face recognition pipeline consists of 4 common stages: detect, align, represent and verify. LookKit handles all these common stages in the background. You can just call its verification, find or cluster function in its interface with a single line of code.
+
+## Face Verification
+Verification function offers to verify face pairs as same person or different persons. 
+treshold can be adjusted.
+
+```swift
+let sourceImage = UIImage(named: "my_image_file")!
+let targetImage = UIImage(named: "unknow_image_file")!
+
+Recognition.verify(sourceImage: sourceImage,
+                   targetImages: targetImage,
+                   similarityThreshold: 0.75) { (result) in
+      switch result {
+         case .success(let result): 
+          // result contain list of all faces that's has match on the target image.
+          // each Match has:
+            // sourceFace: Face // source cropped and align face
+            // targetFace: Face // target cropped and align face
+            // distance: Double // distance between faces
+            // threshold: Double // maximum threshold
+         case .failure(let error):
+             print(error)
+         }
+}
+```
+Sometime we want to work with more then one target image. then we can pass an array of ```UIImage```.
+```swift
+
+// Traget images
+let targetImages = [UIImage(named: "image1.jpg"), 
+                    UIImage(named: "image2.jpg"), 
+                    UIImage(named: "image3.jpg")]
+```
+and then just call with the image list
+
+```swift
+let sourceImage = UIImage(named: "my_image_file")!
+
+Recognition.verify(sourceImage: sourceImage,
+                   targetImages: targetImages,
+                   similarityThreshold: 0.75) { (result) in ...
+                   
+```
+But this is not recommand for large amount of photos due to high memory allocation. insted use *Face Identification*
+
+## Face Identification
+
+Face identification requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action for you.
+We start with fatching user photos using ```AssetFetchingOptions```.
+```swift
+// source image must contian at least one face. 
+let sourceImage = UIImage(named: "my_image_file")!
+
+// We fetch the last 100 photos from the user gallery.
+let fetchAssetOptions = AssetFetchingOptions(sortDescriptors: nil,
+                                             assetCollection: .allPhotos,
+                                             fetchLimit: 100)
+                                                                     
+```
+For better control over the process you can create ```ProcessConfiguration```. it has many options for fine tuning the result of the face recognition.
+
+```swift
+// Process Configuration
+let cofig = ProcessConfiguration()
+
+// encoder model
+cofig.faceEncoderModel = .facenet
+
+// linear regresion alignment algorithm
+cofig.landmarksAlignmentAlgorithm = .pointsSphereFace5
+
+// face chip padding
+cofig.faceChipPadding = 0.0
+     
+```
+Then, We try to find all faces matched to the source faces. using ``find``
+```swift
+Recognition.find(sourceImage: face1,
+                 galleyFetchOptions: fetchAssetOptions,
+                 similarityThreshold: 0.75,
+                 processConfiguration: cofig) { (result) in
+                 switch result {
+                    case .success(let result):
+                    // result contain list of all faces that's has match on the target image.
+                    // each Match has:
+                    // sourceFace: Face // source cropped and align face
+                    // targetFace: Face // target cropped and align face
+                    // distance: Double // distance between faces
+                    // threshold: Double // maximum threshold
+                    case .failure(let error):
+                        print(error)
+              }
+}
+
+
+```
+
+## Face Grouping
+
+Like every photo app we want to cluster all faces from the user gallery to groups of faces. it can be achieved in less then 5 lines of code.
+
+```swift
+// Create photo fetech options
+let options = AssetFetchingOptions()
+        
+// Create cluster options
+let clusterOptions = ClusterOptions()
+
+// Start clustering
+Recognition.cluster(fetchOptions: options,
+               culsterOptions: clusterOptions) { (result) in
+     // Result contian groups of faces
+     // [[Face]]
+     switch result {
+        case .success(let faces):
+           print(faces)
+        case .failure(_):
+           break
+     }
+}
+```
+
+
 
 ### Create Action
 Firstly, LookKit provides useful initializers to create face location request with ```Actions```. 
@@ -186,7 +315,7 @@ Detector.detect(pipelineProcess,
 
 ### Fetch options
 Sometime we want to work with more then one source image. LookKit SDK has 2 options.
-We can path array of images
+We can pass array of images
 ```swift
 
 // User photos
@@ -219,94 +348,13 @@ let options = AssetFetchingOptions(sortDescriptors: [NSSortDescriptor]?,
 ### Asset Collections
 ```swift
 public enum AssetCollection {
-    case allAssets
+    case allPhotos
     case albumName(_ name: String)
     case assetCollection(_ collection: PHAssetCollection)
     case identifiers(_ ids: [String])
 }
 ```
 
-# Face Recognition
-A modern face recognition pipeline consists of 4 common stages: detect, align, represent and verify. LookKit handles all these common stages in the background. You can just call its verification, find or cluster function in its interface with a single line of code.
-
-## Face Verification
-Verification function offers to verify face pairs as same person or different persons. 
-Treshold can be adjusted.
-
-```swift
-let face1 = UIImage(named: "face1")!
-let face2 = UIImage(named: "face2")!
-
-Recognition.verify(sourceImage: face1,
-                   targetImages: face2,
-                   similarityThreshold: 0.7) { (result) in
-      switch result {
-         case .success(let result): 
-          // result contain list of all faces that's has match on the target image.
-          // each Match has:
-            // sourceFace: Face // source cropped and align face
-            // targetFace: Face // target cropped and align face
-            // distance: Double // distance between faces
-            // threshold: Double // maximum threshold
-         case .failure(let error):
-             print(error)
-         }
-}
-```
-## Face Identification
-
-Face identification requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action.
-
-```swift
-// source image must contian at least one face. 
-let face1 = UIImage(named: "face1")!
-
-// We fetch the last 100 photos in the user gallery.
-let fetchAssetOptions = AssetFetchingOptions(sortDescriptors: nil,
-                                             assetCollection: .allAssets,
-                                             fetchLimit: 100)
-                                             
-// Then We try to find all images contain the source face.
-Recognition.find(sourceImage: face1,
-                 galleyFetchOptions: fetchAssetOptions,
-                 similarityThreshold: 0.75,
-                 processConfiguration: cofig) { (result) in
-               
-                switch result {
-                    case .success(let compression):
-                        print(compression.count)
-                    case .failure(let error):
-                        print(error)
-              }
-}
-
-
-```
-
-## Face Grouping
-
-Like every photo app we want to cluster all faces to groups.
-
-```swift
-// Create photo fetech options
-let options = AssetFetchingOptions()
-        
-// Create cluster options
-let clusterOptions = ClusterOptions()
-
-// Start clustering
-Recognition.cluster(fetchOptions: options,
-               culsterOptions: clusterOptions) { (result) in
-     // Result contian groups of faces
-     // [[Face]]
-     switch result {
-        case .success(let faces):
-           print(faces)
-        case .failure(_):
-           break
-     }
-}
-```
 
 # Demo Project 
 Just plug and play.
