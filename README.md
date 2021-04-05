@@ -323,8 +323,8 @@ Detector.detect(pipelineProcess,
 
 
 ### Fetch options
-Sometime we want to work with more then one source image. LookKit SDK has 2 options.
-We can pass array of images
+Sometime we want to work with more then one source image. 
+We can pass a list of images:
 ```swift
 
 // User photos
@@ -337,7 +337,7 @@ Detector.detect(faceLocation,
                 sourceImages: images) { (result) in
 ```
 But this is not recommand for large amount of photos due to high memory allocation.
-LookKit SDK provice usful fetch options to work with user photo gallery and let you focus on your user experience.
+LookKit provice usful fetch options to work with user photo gallery and let you focus on your user experience.
 It's start with creation of asset fetching options using ```AssetFetchingOptions```
 ```swift 
 // Create default fetch options
