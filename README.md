@@ -7,8 +7,8 @@ It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and the
 
 It has 4 main API's:
 1. [```DeepLook```](#DeepLook) = For fast simple analyzing actions over single photos.
-1. ```Recognition``` - For face Recognition/Identification/Grouping.
-2. ```Detector``` - For using many available image deep looking operations over batch of photos.
+1. [```Recognition```](#Recognition) - For face Recognition/Identification/Grouping.
+2. [```Detector```](#Detecotr) - For using many available image deep looking operations over batch of photos.
 3.  ```ImageProcessor``` - For Image Processing like align, crop, and rotate faces.
 
 ## Features
@@ -250,7 +250,7 @@ Recognition.cluster(fetchOptions: options,
 }
 ```
 
-
+### ```Detector```
 
 ### Create Action
 Firstly, LookKit provides useful initializers to create face location request with ```Actions```. 
