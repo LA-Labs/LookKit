@@ -173,7 +173,7 @@ Recognition.verify(sourceImage: sourceImage,
 ```
 But this is not recommand for large amount of photos due to high memory allocation. insted use *Face Identification*
 
-## Face Identification
+### Face Identification
 
 Face identification requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action for you.
 We start with fatching user photos using ```AssetFetchingOptions```.
@@ -225,7 +225,7 @@ Recognition.find(sourceImage: face1,
 
 ```
 
-## Face Grouping
+### Face Grouping
 
 Like every photo app we want to cluster all faces from the user gallery to groups of faces. it can be achieved in less then 5 lines of code.
 
@@ -275,7 +275,7 @@ Detector.analyze(faceLocation,
 }
 ```
 
-## Chain Requests
+### Chain Requests
 ### Create a pipeline process
 If we want to request more then one action on the image we can chain actions.
 The photo will go through the actions pipeline and the result will contain all the requsted data. 
