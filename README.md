@@ -91,13 +91,15 @@ To convert it to UIKit coordinate system.
 ```swift
 
 // get image size
-let imageSize =  CGSize(width: myImage.cgImage!.width, height: myImage.cgImage!.height)
+let imageSize =  CGSize(width: image.cgImage!.width, height: image.cgImage!.height)
 
 // convert to UIKit coordinate system.
-let points = faceLandmarksPoints.pointsInImage(imageSize: imageSize)
-             .map({ (point) -> CGPoint in
-                 CGPoint(x: point.x, y: imageSize.height - point.y)
-             })
+let points = faceLandmarks.map({ (landmarks) -> [CGPoint] in
+    landmarks.pointsInImage(imageSize: imageSize)
+    .map({ (point) -> CGPoint in
+        CGPoint(x: point.x, y: imageSize.height - point.y)
+    })
+})
 ```
 
 If you already have the normlized face locations you can use them for faster result.
