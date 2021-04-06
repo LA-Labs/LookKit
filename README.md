@@ -61,7 +61,13 @@ let faceLocations = DeepLook.faceLocation(image) // Normalized rect. [CGRect]
 ```
 ```faceLocation(image)``` return an array of normalized vision bounding box. to convert it to ```CGRect``` in UIKit coordinate system you can use apple func ```VNImageRectForNormalizedRect```.
 
-### Find and manipulate facial features in pictures
+To crop face chips out of the image.
+```swift
+// get list of face chips images.
+let corppedFaces = DeepLook.cropFaces(image,
+                                      locations: faceLocations)
+```
+### Find facial features in pictures
 
 Get the locations and outlines of each person's eyes, nose, mouth and chin.
 
