@@ -201,7 +201,7 @@ We start with fatching user photos using ```AssetFetchingOptions```.
 // source image must contian at least one face. 
 let sourceImage = UIImage(named: "my_image_file")!
 
-// We fetch the last 100 photos from the user gallery.
+// We fetch the last 100 photos from the user gallery to find relevant faces.
 let fetchAssetOptions = AssetFetchingOptions(sortDescriptors: nil,
                                              assetCollection: .allPhotos,
                                              fetchLimit: 100)
@@ -223,7 +223,7 @@ cofig.landmarksAlignmentAlgorithm = .pointsSphereFace5
 cofig.faceChipPadding = 0.0
      
 ```
-Then, We try to find all faces matched to the source faces. using ``find``
+Then, We can start finding all faces matched to the source faces. using ``find``
 ```swift
 Recognition.find(sourceImage: face1,
                  galleyFetchOptions: fetchAssetOptions,
