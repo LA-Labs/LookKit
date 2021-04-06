@@ -28,7 +28,7 @@ It has 4 main API's:
 - Xcode 12.0+
 
 # Install
-### SPM:
+## SPM:
 ```
 dependencies: [
   .package(
@@ -67,7 +67,7 @@ To crop face chips out of the image.
 let corppedFaces = DeepLook.cropFaces(image,
                                       locations: faceLocations)
 ```
-### Find facial features in pictures
+### Find facial features in pictures.
 
 Get the locations and outlines of each person's eyes, nose, mouth and chin.
 
@@ -127,6 +127,17 @@ if you want to have more control on the result you can call ```faceDistance``` a
 ```swift
 // get array of double represent the l2 norm euclidean distance.
 let results = DeepLook.faceDistance([angelina_encoding], faceToCompare: unknown_encoding) // [Double]
+```
+
+
+
+### Find facial attribute in picture
+![Screenshot](emotion_demo.png)
+
+
+```swift
+// return list of faces emotions `[Face.FaceEmotion]`.
+let emotions = DeepLook.faceEmotion(image)
 ```
 
 
