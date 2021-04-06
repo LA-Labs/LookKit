@@ -287,13 +287,13 @@ If we want to request more then one action on the image we can chain actions.
 The photo will go through the actions pipeline and the result will contain all the requsted data. 
 
 Available Actions:
-- face location - find all faces location.
-- face landmarks - find face landmark for each face.
-- face quality - 0..1 quality scroe for each face.
-- face emotion - emotion anlize for each face.
-- face encoding - conver face to vector representation.
-- object location - find object location (100 classes)
-- object detection - find object (1000 classes)
+- Face location - find all faces location.
+- Face landmarks - find face landmark for each face.
+- Face quality - 0..1 quality scroe for each face.
+- Face emotion - emotion anlize for each face.
+- Face encoding - conver face to vector representation.
+- Object location - find object location (100 classes)
+- Object detection - find object (1000 classes)
 
 To make it more efficiant we use each action output as other action input.
 For example if we already have faces location we can pass this boxes to the landmark detecor and make much more faster. 
