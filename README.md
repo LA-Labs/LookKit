@@ -289,7 +289,7 @@ The photo will go through the actions pipeline and the result will contain all t
 Available Actions:
 - Face location - find all faces location.
 - Face landmarks - find face landmark for each face.
-- Face quality - 0..1 quality scroe for each face.
+- Face quality - 0...1 quality scroe for each face.
 - Face emotion - emotion anlize for each face.
 - Face encoding - conver face to vector representation.
 - Object location - find object location (100 classes)
