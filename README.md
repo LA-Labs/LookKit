@@ -70,7 +70,7 @@ To crop face chips out of the image.
 let corppedFaces = DeepLook.cropFaces(image,
                                       locations: faceLocations)
 ```
-[Demo](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Crop_faces.swift)
+[Face locations Demo](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Crop_faces.swift)
 
 ### Find facial features in pictures.
 
@@ -103,7 +103,9 @@ let points = faceLandmarks.map({ (landmarks) -> [CGPoint] in
     })
 })
 ```
-[Demo](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Faces_landmarks.swift)
+[Face landmarks Demo](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Faces_landmarks.swift)
+
+[Facial landmakes image](https://i.stack.imgur.com/JkJd9.jpg)
 
 If you already have the normlized face locations you can use them for faster result.
 ```swift
@@ -148,7 +150,7 @@ let results = DeepLook.faceDistance([angelina_encoding], faceToCompare: unknown_
 let emotions = DeepLook.faceEmotion(image)
 ```
 
-[Demo](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Face_emotion.swift)
+[Face emotion Demo](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Face_emotion.swift)
 
 ## Advance Usege
 ### ```Recognition```
