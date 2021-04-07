@@ -52,7 +52,7 @@ import LookKit
 
 ```DeepLook``` provide the most simple API for computer vision analysis. Unlike other API in this package ```DeepLook``` is not using a background thread. It is your responsibility to call it from any background thread you like, like ```DispatchQueue.global().async``` to not block the ```main``` thread. 
 
-### Find faces in pictures 
+### Find faces in pictures - [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Face_location.swift)
 ![Screenshot](https://github.com/LA-Labs/LookKit_Demo/blob/main/face_locations_demo.png)
 
 Find all the faces that appear in a picture:
@@ -65,7 +65,7 @@ let faceLocations = DeepLook.faceLocation(image) // Normalized rect. [CGRect]
 ```
 ```faceLocation(image)``` return an array of normalized vision bounding box. to convert it to ```CGRect``` in UIKit coordinate system you can use apple func ```VNImageRectForNormalizedRect```.
 
-To crop face chips out of the image. [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Crop_faces.swift)
+To crop face chips out of the image. - [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Crop_faces.swift)
 ```swift
 // get list of face chips images.
 let corppedFaces = DeepLook.cropFaces(image,
@@ -73,7 +73,7 @@ let corppedFaces = DeepLook.cropFaces(image,
 ```
 
 
-### Find facial features in pictures. [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Faces_landmarks.swift)
+### Find facial features in pictures. - [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Faces_landmarks.swift)
 
 
 Get the locations and outlines of each person's eyes, nose, mouth and chin.
