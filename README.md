@@ -401,3 +401,6 @@ https://github.com/LA-Labs/LookKit_Demo
 
 # Contributing
 We don't have any contributing guidelines at the moment, but feel free to submit pull requests & file issues within GitHub!
+
+# LICENSE
+LookKit is released under the MIT license. [See LICENSE](https://github.com/LA-Labs/LookKit/blob/main/LICENSE) for details.
