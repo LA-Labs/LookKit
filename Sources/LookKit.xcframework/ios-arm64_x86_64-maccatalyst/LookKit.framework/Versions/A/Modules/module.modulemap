@@ -1,0 +1,11 @@
+framework module LookKit {
+  umbrella header "LookKit.h"
+
+  export *
+  module * { export * }
+}
+
+module LookKit.Swift {
+    header "LookKit-Swift.h"
+    requires objc
+}

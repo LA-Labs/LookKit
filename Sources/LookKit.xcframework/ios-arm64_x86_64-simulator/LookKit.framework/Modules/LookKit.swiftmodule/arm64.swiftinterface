@@ -217,7 +217,8 @@ public let DeepLook: LookKit.LKDeepLook
   public func faceLocation(_ faceImage: UIKit.UIImage) -> [CoreGraphics.CGRect]
   public func faceDistance(_ faceEncodings: [[Swift.Double]], faceToCompare: [Swift.Double]) -> [Swift.Double]
   public func compareFaces(_ faceEncodings: [[Swift.Double]], faceToCompare: [Swift.Double], treshold: Swift.Double = 0.6) -> [Swift.Bool]
-  public func cropFaces(_ faceImage: UIKit.UIImage, locations: [CoreGraphics.CGRect]) -> [UIKit.UIImage]?
+  public func cropFaces(_ faceImage: UIKit.UIImage, locations: [CoreGraphics.CGRect]) -> [UIKit.UIImage]
+  public func faceEmotion(_ faceImage: UIKit.UIImage, knownFaceLocations: [CoreGraphics.CGRect] = []) -> [LookKit.Face.FaceEmotion]
   @objc deinit
 }
 public enum QualityFilter {
