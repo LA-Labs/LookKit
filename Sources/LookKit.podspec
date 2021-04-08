@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
     DESC
     spec.platform     = :ios, "13.0"
     spec.ios.deployment_target = "13.0"
-    spec.source        = { :git => "https://github.com/LA-Labs/LookKit.git", :tag => "#{spec.version}" }
+    spec.source        = { :git => "https://github.com/LA-Labs/LookKit_Pod.git", :tag => "#{spec.version}" }
     spec.vendored_frameworks = "LookKit.xcframework"
 end
