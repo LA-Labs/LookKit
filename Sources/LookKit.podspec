@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
     spec.name         = "LookKit"
-    spec.version      = "0.0.2"
+    spec.version      = "0.0.22"
     spec.summary      = "The world's simplest Computer Vision API for iOS and macOS developers."
     spec.homepage       =  "https://github.com/LA-Labs/LookKit"
     spec.author            = { 'La-Labs' => 'lalabsproducts@gmail.com' }
-    spec.license           = { :type => 'MIT', :file => 'License' }
+    spec.license           = { :type => 'MIT', :file => 'LICENSE' }
     spec.description  = <<-DESC
-    Computer vision framework for mobile.
+    The world's simplest Computer Vision API for iOS and macOS developers .
     DESC
     spec.platform     = :ios, "13.0"
     spec.ios.deployment_target = "13.0"
