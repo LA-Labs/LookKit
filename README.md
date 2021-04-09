@@ -1,6 +1,6 @@
 
 # LookKit SDK
-[![Platform](https://img.shields.io/cocoapods/p/LookKit.svg?style=flat)](https://github.com/LA-Labs/LookKit)
+[![Platform](https://img.shields.io/cocoapods/p/LookKit.svg?style=flat)](https://github.com/LA-Labs/LookKit_Pod)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/LookKit.svg)](https://img.shields.io/cocoapods/v/LookKit.svg)
 [![Pod License](http://img.shields.io/cocoapods/l/LookKit.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
