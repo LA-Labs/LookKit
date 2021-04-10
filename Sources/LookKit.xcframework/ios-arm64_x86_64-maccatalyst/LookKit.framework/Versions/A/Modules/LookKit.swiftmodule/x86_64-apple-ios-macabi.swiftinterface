@@ -39,7 +39,7 @@ public let ImageProcessor: LookKit.LKImageProcessor
 public enum VisionProcessError : Swift.Error {
   case unknown
   case fetchImages
-  case facesDetcting
+  case facesDetecting
   case cgImageNotFound
   case emptyObservation
   case error(Swift.Error)
@@ -57,7 +57,7 @@ public class AssetFetchingOptions {
 public let Recognition: LookKit.LKRecognition
 @_hasMissingDesignatedInitializers public class LKRecognition {
   public static let `default`: LookKit.LKRecognition
-  public func cluster(fetchOptions: LookKit.AssetFetchingOptions, culsterOptions: LookKit.ClusterOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
+  public func cluster(fetchOptions: LookKit.AssetFetchingOptions, clusterOptions: LookKit.ClusterOptions, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[[LookKit.Face]], LookKit.VisionProcessError>) -> Swift.Void)
   public func verify(sourceImage: UIKit.UIImage, targetImages: UIKit.UIImage..., similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.Match], LookKit.FaceComparisonError>) -> Swift.Void)
   public func find(sourceImage: UIKit.UIImage, galleyFetchOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.Match], LookKit.FaceComparisonError>) -> Swift.Void)
   public func find(phAssetLocalIdentifier: Swift.String, galleyFetchOptions: LookKit.AssetFetchingOptions, similarityThreshold: Swift.Double, processConfiguration: LookKit.ProcessConfiguration = ProcessConfiguration(), completion: @escaping (Swift.Result<[LookKit.Match], LookKit.FaceComparisonError>) -> Swift.Void)
@@ -147,8 +147,6 @@ extension PHImageRequestOptions {
 }
 public struct ProcessInput {
 }
-public struct ProcessAsset {
-}
 public class ProcessConfiguration {
   public init()
   @LookKit.NonNegative public var fetchImageSize: CoreGraphics.CGFloat {
@@ -216,7 +214,7 @@ public let DeepLook: LookKit.LKDeepLook
   public func faceLandmarks(_ faceImage: UIKit.UIImage, knownFaceLocations: [CoreGraphics.CGRect] = []) -> [Vision.VNFaceLandmarkRegion2D]
   public func faceLocation(_ faceImage: UIKit.UIImage) -> [CoreGraphics.CGRect]
   public func faceDistance(_ faceEncodings: [[Swift.Double]], faceToCompare: [Swift.Double]) -> [Swift.Double]
-  public func compareFaces(_ faceEncodings: [[Swift.Double]], faceToCompare: [Swift.Double], treshold: Swift.Double = 0.6) -> [Swift.Bool]
+  public func compareFaces(_ faceEncodings: [[Swift.Double]], faceToCompare: [Swift.Double], threshold: Swift.Double = 0.6) -> [Swift.Bool]
   public func cropFaces(_ faceImage: UIKit.UIImage, locations: [CoreGraphics.CGRect]) -> [UIKit.UIImage]
   public func faceEmotion(_ faceImage: UIKit.UIImage, knownFaceLocations: [CoreGraphics.CGRect] = []) -> [LookKit.Face.FaceEmotion]
   @objc deinit
@@ -234,7 +232,7 @@ public enum QualityFilter {
   public func hash(into hasher: inout Swift.Hasher)
 }
 public struct Face : Swift.Equatable {
-  public let localIdnetifier: Swift.String
+  public let localIdentifier: Swift.String
   public let faceCroppedImage: UIKit.UIImage
   public let faceObservation: Vision.VNFaceObservation
   public var landmarks: Vision.VNFaceLandmarks2D? {
@@ -275,7 +273,7 @@ public struct DetectedObject : Swift.Equatable {
   public static func == (a: LookKit.DetectedObject, b: LookKit.DetectedObject) -> Swift.Bool
 }
 public class ImageFetcherOptions {
-  public init(downsampleImageSize: CoreGraphics.CGFloat = 400, rquestOptions: Photos.PHImageRequestOptions = PHImageRequestOptions.defaultOptions)
+  public init(downsampleImageSize: CoreGraphics.CGFloat = 400, requestOptions: Photos.PHImageRequestOptions = PHImageRequestOptions.defaultOptions)
   @objc deinit
 }
 public struct Stack<Element> {
