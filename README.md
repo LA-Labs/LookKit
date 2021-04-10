@@ -20,7 +20,7 @@ It has 4 main API's:
 
  - [x] Faces Location, Landmarks, Quality, and much more in only one line.
  - [x] No internet connection needed. All running locally.
- - [x] Face Recognition like Face verification and Face grouping over user gallery.
+ - [x] Face Verification and grouping over user gallery.
  - [x] 100% pure Swift. No external dependency like openCV, Dlib, etc.
  - [x] Chainable Request for faster performance.
  - [x] Image processing, Crop and align faces for creating a faces database.
