@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = "LookKit"
-    spec.version      = "0.0.22"
+    spec.version      = "0.3.1"
     spec.summary      = "The world's simplest Computer Vision API for iOS and macOS developers."
     spec.homepage       =  "https://github.com/LA-Labs/LookKit"
     spec.author            = { 'La-Labs' => 'lalabsproducts@gmail.com' }
