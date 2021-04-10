@@ -265,15 +265,15 @@ Recognition.find(sourceImage: face1,
 Like every photo app we want to cluster all faces from the user gallery to groups of faces. it can be achieved in less then 5 lines of code.
 
 ```swift
-// Create photo fetech options
+// Create photo fetech options.
 let options = AssetFetchingOptions()
         
-// Create cluster options
+// Create cluster options.
 let clusterOptions = ClusterOptions()
 
 // Start clustering
 Recognition.cluster(fetchOptions: options,
-               culsterOptions: clusterOptions) { (result) in
+                    clusterOptions: clusterOptions) { (result) in
      // Result contian groups of faces
      // [[Face]]
      switch result {
