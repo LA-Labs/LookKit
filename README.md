@@ -5,7 +5,8 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/LookKit.svg)](https://img.shields.io/cocoapods/v/LookKit.svg)
 [![Pod License](http://img.shields.io/cocoapods/l/LookKit.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-LookKit is a very lightweight package aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift inspired by Dlib and Deepface frameworks syntex.
+When dealing with user data privacy should be your first concern. 
+LookKit is a very lightweight package aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift and run locally on the end user device.
 
 It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and then We process multiple IAPs over a batch of photos keeping low memory footprints.
 
@@ -15,7 +16,7 @@ It has 4 main API's:
 2. [```Detector```](#Detector) - For using many available image deep looking operations over batch of photos.
 3.  ```ImageProcessor``` - For Image Processing like align, crop, and rotate faces.
 
-## Features
+## Features 🚀
 
  - [x] Face Location, Face Landmarks, Face Quality, and much more in only one line.
  - [x] No internet connection needed. All running locally.
