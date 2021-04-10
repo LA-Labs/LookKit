@@ -43,40 +43,10 @@ dependencies: [
   )
 ]
 ```
-
 ## Cocoapod:
-CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website.
-Open Terminal and change to the download project's directory, enter the following command to install it:
-
-Install CocoaPods if not already available:
-
-``` bash
-$ [sudo] gem install cocoapods
-$ pod setup
-```
-Go to the directory of your Xcode project, and Create and Edit your *Podfile* and add _LookKit_:
-
-``` bash
-$ cd /path/to/MyProject
-$ touch Podfile
-$ edit Podfile
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '13.0'
-
-use_frameworks!
-pod 'LookKit'
-```
-
-Install into your project:
-
-``` bash
-$ pod install
-```
-
-Open your project in Xcode from the .xcworkspace file (not the usual project file):
-
-``` bash
-$ open MyProject.xcworkspace
+CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate LookKit into your Xcode project using CocoaPods, specify it in your Podfile:
+```ruby
+pod 'LookKit' 
 ```
 ## Import
 ```swift 
