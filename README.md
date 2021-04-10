@@ -6,7 +6,7 @@
 [![Pod License](http://img.shields.io/cocoapods/l/LookKit.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 When dealing with user data privacy should be your first concern. 
-LookKit is a very lightweight package aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid package wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift and run locally on the end user device.
+LookKit is a very lightweight framework aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid framework wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift and run locally on the end user device.
 
 It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and then We process multiple IAPs over a batch of photos keeping low memory footprints.
 
